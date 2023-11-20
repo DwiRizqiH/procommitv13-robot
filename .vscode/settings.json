@@ -1,0 +1,8 @@
+{
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.customCommand": "C:/cvavr/BIN/cvavrcl.exe D:/Workspace/PROCOMMIT/PROCOMMITv13/v13.prj -ba -rw",
+    "code-runner.executorMap": {
+        "c": "C:/cvavr/BIN/cvavrcl.exe D:/Workspace/PROCOMMIT/PROCOMMITv13/v13.prj -ba -rw"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

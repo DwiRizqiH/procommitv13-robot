@@ -1,0 +1,3 @@
+VERSION:3 SOURCE_TIMESTAMP:577355B0
+NODE:F LEVEL:0 LINE:1 "delay(int ms)"
+NODE:F LEVEL:0 LINE:6 "lcd_kedip(int ulangi)"

@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Avr",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/cvavr/INC"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ]
+        }
+    ],
+    "version": 4
+}

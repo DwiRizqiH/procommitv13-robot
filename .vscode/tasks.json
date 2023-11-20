@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "Build All Project",
+			"command": "C:/cvavr/BIN/cvavrcl.exe",
+			"args": [
+				"${workspaceFolder}/v13.prj",
+				"-ba",
+				"-rw"
+			],
+			"options": {
+				"cwd": "C:/cvavr/BIN"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build",
+			"detail": "compiler: C:/cvavr/BIN/cvavrcl.exe"
+		}
+	]
+}
