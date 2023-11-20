@@ -36,6 +36,10 @@
 #define         gulung_on       pos_gulung=245;
 #define         gulung_stop     pos_gulung=255;
 
+#define         merah   0
+#define         kuning  1
+#define         hijau   2
+
 
 // Alphanumeric LCD Module functions
 #asm
@@ -70,9 +74,14 @@ char simpan;
 int capit = 0, angkat = 0, _maju = 0, _mundur = 0, mode_kec = 0;
 char arr[16], irr[16];
 int push = 1;
-bool isDelayClick1 = false;
 
-eeprom int garis[7], back[7], tengah[7], mapMirror[1];
+int count_btn = 0;
+int count_child_btn = 0;
+bool isChildSelect = false;
+bool isTestTombol = false;
+
+
+eeprom int garis[7], back[7], tengah[7], mapMirror[1], positionD;
 
 char sen[7];
 int sensor;
@@ -95,6 +104,7 @@ int second = 0;
 #include "lib/motor-func.c"
 // #include "lib/scan-func.c" // has already import from motor-func
 #include "lib/servo-func.c"
+#include "lib/warna-func.c"
 #include "program.c"
 #include "lib/menu-func.c"
 
@@ -136,7 +146,6 @@ interrupt[TIM0_COMP] void timer0_comp_isr(void)
 {
     // Place your code here
 }
-
 
 void main(void) 
 {
@@ -257,48 +266,125 @@ void main(void)
     /// mapMirror = 1 - map/lintasan bagian merah
     if(mapMirror[0] != 0 && mapMirror[0] != 1) mapMirror[0] = 0;
 
+    lcd_clear();
+    lcd_gotoxy(0, 0);
+    lcd_putsf("Menu");
+    lcd_gotoxy(0, 1);
+    lcd_putsf("Run Bot");
+
     while(1) {
-        if((t1 == 0) && !isTestTombol) {
-            Program_Jalan();
-
-            buttonhold[0] += 1;
-            while((t1 == 0) && !isTestTombol && !isDelayClick1) {
-                isDelayClick1 = true;
-                delay(3);
-                if(buttonhold[0] > 20) {
-                    isSelect = true;
-                    changeMenu();
-                } else {
-                    isSelect = false; isChildSelect = false;
-                    changeMenu();
-                    buttonhold[0] = 0;
-                }
-                isDelayClick1 = false; break;
-            }
-            // lcd_gotoxy(0, 0);
-            // sprintf(buff, "button1 = %d  ", button1click);
-            // lcd_puts(buff);
-        } else if((t1 == 1)) {
-            buttonhold[0] = 0;
-            isDelayClick1 = false;
+        if(!isChildSelect) {
+            display_sensor();
+            bacawarna();
         }
-        if (    (t2 == 0) 
-                && !isTestTombol 
-                && (!isChildSelect && menuSelect == 0) // Jika Menu di Run Bot, jangan ubah page
-            ) {
-            menuSelect += 1;
-            if(menuSelect >= 4) menuSelect = 0;
-            changeMenu();
-            // scan_garis(); 
-            // delay(300);
-            // scan_back();
-            // delay(100);
-            // hit_tengah();
 
-            // button1click = 0;
+        // lcd_gotoxy(0, 1);
+        // sprintf(buff, "button1 = %d  ", count_btn);
+        // lcd_puts(buff);
+
+        //bacawarna();
+        if((t1 == 0)) {
+            // Program_Jalan();
+
+            if(!isChildSelect) count_btn ++;
+            if(isChildSelect) count_child_btn ++;
+            if(count_btn >= 5) count_btn = 0;
+            delay(10);
+            changeMenu(count_btn, false, count_child_btn);
+
+            // buttonhold[0] += 1;
+            // while((t1 == 0) && !isTestTombol && !isDelayClick1) {
+            //     isDelayClick1 = true;
+            //     delay(3);
+            //     if(buttonhold[0] > 20) {
+            //         isSelect = true;
+            //         changeMenu();
+            //     } else {
+            //         isSelect = false; isChildSelect = false;
+            //         changeMenu();
+            //         buttonhold[0] = 0;
+            //     }
+            //     isDelayClick1 = false; break;
+            // }
             // lcd_gotoxy(0, 0);
             // sprintf(buff, "button1 = %d  ", button1click);
+        }
+        if((t2 == 0)) {
+            changeMenu(count_btn, true, count_child_btn);
+            delay(10);
+        }
             // lcd_puts(buff);
-        }   
+        // } else if((t1 == 1)) {
+        //     buttonhold[0] = 0;
+        //     isDelayClick1 = false;
+        // }
+
+            // if ((count_btn==0) && (t2==0)){
+            //     lcd_clear();
+            //     lcd_gotoxy(0, 0);
+            //     lcd_putsf("menu 1");
+            // } else if((count_btn == 1) && (t2 == 0)) {
+            //     lcd_clear();
+            //     lcd_gotoxy(0, 0);
+            //     lcd_putsf("menu 2");
+            // } else if((count_btn == 2) && (t2 == 0)) {
+            //     lcd_clear();
+            //     lcd_gotoxy(0, 0);
+            //     lcd_putsf("menu 3");
+            // } else if((count_btn == 3) && (t2 == 0)) {
+            //     lcd_clear();
+            //     lcd_gotoxy(0, 0);
+            //     lcd_putsf("menu 4");
+            // } else if((count_btn == 4) && (t2 == 0)) {
+            //     lcd_clear();
+            //     lcd_gotoxy(0, 0);
+            //     lcd_putsf("menu 5");
+            // } else if((count_btn == 5) && (t2 == 0)) {
+            //     lcd_clear();
+            //     lcd_gotoxy(0, 0);
+            //     lcd_putsf("menu 6");
+            // } else if((count_btn == 6) && (t2 == 0)) {
+            //     lcd_clear();
+            //     lcd_gotoxy(0, 0);
+            //     lcd_putsf("menu 7");
+            // } else if((count_btn == 7) && (t2 == 0)) {
+            //     lcd_clear();
+            //     lcd_gotoxy(0, 0);
+            //     lcd_putsf("menu 8");
+            // } else if((count_btn == 8) && (t2 == 0)) {
+            //     lcd_clear();
+            //     lcd_gotoxy(0, 0);
+            //     lcd_putsf("menu 9");
+            // } else if((count_btn == 9) && (t2 == 0)) {
+            //     lcd_clear();
+            //     lcd_gotoxy(0, 0);
+            //     lcd_putsf("menu 10");
+            // } else if((count_btn == 10) && (t2 == 0)) {
+            //     lcd_clear();
+            //     lcd_gotoxy(0, 0);
+            // }
+
+        // if (    (t2 == 0) 
+        //         && !isTestTombol 
+        //         && (!isChildSelect && menuSelect == 0) // Jika Menu di Run Bot, jangan ubah page
+        //     ) {
+
+        //         // lengan_bawah;
+        //         // delay(50);
+        //     // menuSelect += 1;
+        //     // if(menuSelect >= 4) menuSelect = 0;
+        //     // changeMenu();
+
+        //     scan_garis(); 
+        //     delay(300);
+        //     scan_back();
+        //     delay(100);
+        //     hit_tengah();
+
+        //     // button1click = 0;
+        //     // lcd_gotoxy(0, 0);
+        //     // sprintf(buff, "button1 = %d  ", button1click);
+        //     // lcd_puts(buff);
+        // }
     }
 }
