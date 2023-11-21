@@ -1,13 +1,15 @@
 // declare variable
-
 void runBot(void);
 void calibration(void);
 void Program_Jalan(void);
 void test_motor(void);
 void test_tombol(void);
 void map_select(int childMenuSelect);
+void tepuk_tangan(void);
 void changeMenu(int menuSelect, bool isSelect, int childMenuSelect) {
     lampu = 0;
+    count_btn = menuSelect;
+    count_child_btn = childMenuSelect;
     if(!isSelect && !isChildSelect) {
         lcd_clear();
         lcd_gotoxy(0, 0);
@@ -15,15 +17,15 @@ void changeMenu(int menuSelect, bool isSelect, int childMenuSelect) {
     }
 
     switch (menuSelect) {
-        case 0: // Run bot
-            if(isSelect || isChildSelect) { runBot(); break; }
-            lcd_gotoxy(0, 1);
-            lcd_putsf("Run Bot");
-            break;
-        case 1: // Calibration
+        case 0: // Calibration
             if(isSelect) { calibration(); break; }
             lcd_gotoxy(0, 1);
             lcd_putsf("Calibration");
+            break;
+        case 1: // Run bot
+            if(isSelect || isChildSelect) { runBot(); break; }
+            lcd_gotoxy(0, 1);
+            lcd_putsf("Run Bot");
             break;
         case 2: // Map Select
             if(isSelect || isChildSelect) { map_select(childMenuSelect); break; }
@@ -40,6 +42,11 @@ void changeMenu(int menuSelect, bool isSelect, int childMenuSelect) {
             lcd_gotoxy(0, 1);
             lcd_putsf("Button");
             break;
+        case 5: // Tepuk tangan XD
+            if(isSelect) { tepuk_tangan(); break; }
+            lcd_gotoxy(0, 1);
+            lcd_putsf("Clap XD");
+            break;
     
         default:
             break;
@@ -52,7 +59,7 @@ void runBot() {
         lcd_gotoxy(0, 0);
         lcd_putsf("Run Bot");
         lcd_gotoxy(0, 1);
-        lcd_putsf("Click 1 to start");
+        lcd_putsf("Click 2 to start");
         isChildSelect = true;
     } else if(isChildSelect) {
         lcd_clear();
@@ -74,7 +81,7 @@ void calibration() {
     hit_tengah();
 
     isChildSelect = false;
-    changeMenu(1, false, 0);
+    changeMenu(0, false, 0);
 }
 
 void map_select(int childMenuSelect) {
@@ -86,12 +93,12 @@ void map_select(int childMenuSelect) {
                 lcd_gotoxy(0, 0);
                 lcd_putsf("Map Biru");
                 lcd_gotoxy(0, 1);
-                lcd_putsf("Click 1 to select"); 
+                lcd_putsf("Click 2 to select"); 
             } else if(isChildSelect) {
                 mapMirror[0] = 0;
                 count_child_btn = 0;
                 isChildSelect = false;
-                changeMenu(2, false, 0);
+                changeMenu(0, false, 0);
             }
             
             break;
@@ -102,12 +109,12 @@ void map_select(int childMenuSelect) {
                 lcd_gotoxy(0, 0);
                 lcd_putsf("Map Merah");
                 lcd_gotoxy(0, 1);
-                lcd_putsf("Click 1 to select"); 
+                lcd_putsf("Click 2 to select"); 
             } else if(isChildSelect) {
                 mapMirror[0] = 1;
                 count_child_btn = 0;
                 isChildSelect = false;
-                changeMenu(2, false, 0);
+                changeMenu(0, false, 0);
             }
             break;
         default:
@@ -123,28 +130,31 @@ void test_motor()
 
     lcd_gotoxy(0, 1);
     lcd_putsf("+100 +100");
-    maju(100, 100);
-    delay_ms(50);
+    setMotor(100, 100);
+    delay_ms(200);
 
     lcd_gotoxy(0, 1);
     lcd_putsf("-100 -100");
-    maju(-100, -100);
-    delay_ms(50);
+    setMotor(-100, -100);
+    delay_ms(200);
 
     lcd_gotoxy(0, 1);
     lcd_putsf("+100 -100");
-    maju(100, -100);
-    delay_ms(50);
+    setMotor(100, -100);
+    delay_ms(200);
 
     lcd_gotoxy(0, 1);
     lcd_putsf("-100 +100");
-    maju(-100, 100);
+    setMotor(-100, 100);
+    delay_ms(200);
+
+    rem(100);
 
     lcd_clear();
     lcd_gotoxy(0, 0);
     
     isChildSelect = false;
-    changeMenu(3, false, 0);
+    changeMenu(0, false, 0);
 }
 
 
@@ -166,7 +176,7 @@ void test_tombol()
 
             isTestTombol = false;
             delay(50);
-            changeMenu(4, false, 0);
+            changeMenu(0, false, 0);
         }
 
         if (t2 == 0)
@@ -188,6 +198,28 @@ void test_tombol()
         }
     }
     
+}
+
+void tepuk_tangan() {
+
+    lcd_clear();
+    lcd_gotoxy(0, 1);
+    lcd_putsf("Hold 1 to exit");
+
+    lcd_gotoxy(0, 0);
+    while (1)
+    {
+        lcd_putsf("XD");
+        if(t1 == 0) break;
+        capit_lepas;
+        if(t1 == 0) break;
+        delay(50);
+        if(t1 == 0) break;
+        capit_ambil;
+        if(t1 == 0) break;
+        delay(50);
+        if(t1 == 0) break;
+    }
 }
 
 // void tes_speed()

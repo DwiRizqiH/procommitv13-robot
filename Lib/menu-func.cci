@@ -1,9 +1,10 @@
-VERSION:3 SOURCE_TIMESTAMP:5774644A
+VERSION:3 SOURCE_TIMESTAMP:57747B13
 NODE:F LEVEL:0 LINE:9 "changeMenu(int menuSelect,_Bool isSelect,int childMenuSelect)"
-NODE:F LEVEL:0 LINE:49 "runBot(void)"
-NODE:F LEVEL:0 LINE:69 "calibration(void)"
-NODE:F LEVEL:0 LINE:80 "map_select(int childMenuSelect)"
-NODE:F LEVEL:0 LINE:118 "test_motor(void)"
-NODE:F LEVEL:0 LINE:153 "test_tombol(void)"
-NODE:F LEVEL:0 LINE:229 "tes_sensor(void)"
-NODE:F LEVEL:0 LINE:240 "tampil_count(void)"
+NODE:F LEVEL:0 LINE:56 "runBot(void)"
+NODE:F LEVEL:0 LINE:76 "calibration(void)"
+NODE:F LEVEL:0 LINE:87 "map_select(int childMenuSelect)"
+NODE:F LEVEL:0 LINE:125 "test_motor(void)"
+NODE:F LEVEL:0 LINE:163 "test_tombol(void)"
+NODE:F LEVEL:0 LINE:203 "tepuk_tangan(void)"
+NODE:F LEVEL:0 LINE:261 "tes_sensor(void)"
+NODE:F LEVEL:0 LINE:272 "tampil_count(void)"

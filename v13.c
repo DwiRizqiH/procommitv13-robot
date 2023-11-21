@@ -80,8 +80,9 @@ int count_child_btn = 0;
 bool isChildSelect = false;
 bool isTestTombol = false;
 
+int positionD = 0;
 
-eeprom int garis[7], back[7], tengah[7], mapMirror[1], positionD;
+eeprom int garis[7], back[7], tengah[7], mapMirror[1];
 
 char sen[7];
 int sensor;
@@ -211,7 +212,7 @@ void main(void)
     MCUCSR = 0x00;
 
     // Timer(s)/Counter(s) Interrupt(s) initialization
-    TIMSK = 0x03;
+    TIMSK = 0x01;
 
     // Analog Comparator initialization
     // Analog Comparator: Off
@@ -258,10 +259,6 @@ void main(void)
     capit_lepas;
     gulung_stop;
 
-    lcd_gotoxy(0, 1);
-    lcd_putsf("TEST");
-    delay_ms(100);
-
     /// mapMirror = 0 - map/lintasan bagian biru
     /// mapMirror = 1 - map/lintasan bagian merah
     if(mapMirror[0] != 0 && mapMirror[0] != 1) mapMirror[0] = 0;
@@ -270,7 +267,7 @@ void main(void)
     lcd_gotoxy(0, 0);
     lcd_putsf("Menu");
     lcd_gotoxy(0, 1);
-    lcd_putsf("Run Bot");
+    lcd_putsf("Calibration");
 
     while(1) {
         if(!isChildSelect) {
@@ -288,7 +285,7 @@ void main(void)
 
             if(!isChildSelect) count_btn ++;
             if(isChildSelect) count_child_btn ++;
-            if(count_btn >= 5) count_btn = 0;
+            if(count_btn >= 6) count_btn = 0;
             delay(10);
             changeMenu(count_btn, false, count_child_btn);
 
