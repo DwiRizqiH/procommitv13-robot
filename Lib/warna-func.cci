@@ -1,0 +1,9 @@
+VERSION:3 SOURCE_TIMESTAMP:57748058
+NODE:V LEVEL:0 LINE:1 "maxHijau -> RAM:????"
+NODE:V LEVEL:0 LINE:2 "maxKuning -> RAM:????"
+NODE:V LEVEL:0 LINE:3 "maxMerah -> RAM:????"
+NODE:V LEVEL:0 LINE:5 "minHijau -> RAM:????"
+NODE:V LEVEL:0 LINE:6 "minKuning -> RAM:????"
+NODE:V LEVEL:0 LINE:7 "minMerah -> RAM:????"
+NODE:F LEVEL:0 LINE:9 "bacawarna(void)"
+NODE:F LEVEL:0 LINE:17 "checkWarna(void)"
