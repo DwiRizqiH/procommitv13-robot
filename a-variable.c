@@ -1,0 +1,10 @@
+int positionD = 0;
+int mapMirror = 0; // 0 - map/lintasan bagian biru, 1 - map/lintasan bagian merah
+
+int maxHijau = 220;
+int maxKuning = 80;
+int maxMerah = 160;
+
+int minHijau = 170;
+int minKuning = 5;
+int minMerah = 85;

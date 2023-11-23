@@ -209,14 +209,14 @@ void scan_delay(int ms)
 }
 // belok garis mirror or no
 void belokKanan(int kec, int lama_rem) {
-    if(mapMirror[0] == 0) {
+    if(mapMirror == 0) {
         belka(kec, lama_rem);
     } else {
         belki(kec, lama_rem);
     }
 }
 void belokKiri(int kec, int lama_rem) {
-    if(mapMirror[0] == 0) {
+    if(mapMirror == 0) {
         belki(kec, lama_rem);
     } else {
         belka(kec, lama_rem);

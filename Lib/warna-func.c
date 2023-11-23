@@ -1,11 +1,3 @@
-int maxHijau = 215;
-int maxKuning = 100;
-int maxMerah = 180;
-
-int minHijau = 190;
-int minKuning = 0;
-int minMerah = 120;
-
 void bacawarna()
 {
     nadc7 = read_adc(7);

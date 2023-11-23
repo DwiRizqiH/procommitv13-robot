@@ -120,6 +120,23 @@ void scanTimer(int countGoal, int kec, int lama)
     rem(lama);
 }
 
+void scanKotak(int brpkali, int kec, int lama_rem) {
+    while (hitung < brpkali) {
+        while(1)
+        {
+            cek_sensor();
+            scan(kec);
+            /*if((sensor & 0b01111111) != 0b01111111) {
+                scan(kec);
+            } else*/ if((sensor & 0b01111111) == 0b01111111) {
+                hitung++; mundur(kec, kec); delay(lama_rem); rem(10); break;
+            }
+            
+        }
+    }
+    hitung = 0;
+}
+
 /// @brief Scan Garis Pertigaan dari kanan garis
 /// @param brpkali - berapa kali scan/pertigaan dilewati
 void scanTka(int brpkali)

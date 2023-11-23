@@ -4,8 +4,10 @@ void calibration(void);
 void Program_Jalan(void);
 void test_motor(void);
 void test_tombol(void);
-void map_select(int childMenuSelect);
-void tepuk_tangan(void);
+// void map_select(int childMenuSelect);
+void sens_warna(void);
+// void tepuk_tangan(void);
+void test_capit(void);
 void changeMenu(int menuSelect, bool isSelect, int childMenuSelect) {
     lampu = 0;
     count_btn = menuSelect;
@@ -27,11 +29,16 @@ void changeMenu(int menuSelect, bool isSelect, int childMenuSelect) {
             lcd_gotoxy(0, 1);
             lcd_putsf("Run Bot");
             break;
-        case 2: // Map Select
-            if(isSelect || isChildSelect) { map_select(childMenuSelect); break; }
+        case 2: // Sensor Warna
+            if(isSelect) { sens_warna(); break; }
             lcd_gotoxy(0, 1);
-            lcd_putsf("Map");
+            lcd_putsf("Sens Warna");
             break;
+        // case 2: // Map Select
+        //     if(isSelect || isChildSelect) { map_select(childMenuSelect); break; }
+        //     lcd_gotoxy(0, 1);
+        //     lcd_putsf("Map");
+        //     break;
         case 3: // Test Motor
             if(isSelect) { test_motor(); break; }
             lcd_gotoxy(0, 1);
@@ -43,9 +50,9 @@ void changeMenu(int menuSelect, bool isSelect, int childMenuSelect) {
             lcd_putsf("Button");
             break;
         case 5: // Tepuk tangan XD
-            if(isSelect) { tepuk_tangan(); break; }
+            if(isSelect) { test_capit(); break; }
             lcd_gotoxy(0, 1);
-            lcd_putsf("Clap XD");
+            lcd_putsf("Capit");
             break;
     
         default:
@@ -95,7 +102,7 @@ void map_select(int childMenuSelect) {
                 lcd_gotoxy(0, 1);
                 lcd_putsf("Click 2 to select"); 
             } else if(isChildSelect) {
-                mapMirror[0] = 0;
+                mapMirror = 0;
                 count_child_btn = 0;
                 isChildSelect = false;
                 changeMenu(0, false, 0);
@@ -111,7 +118,7 @@ void map_select(int childMenuSelect) {
                 lcd_gotoxy(0, 1);
                 lcd_putsf("Click 2 to select"); 
             } else if(isChildSelect) {
-                mapMirror[0] = 1;
+                mapMirror = 1;
                 count_child_btn = 0;
                 isChildSelect = false;
                 changeMenu(0, false, 0);
@@ -200,6 +207,62 @@ void test_tombol()
     
 }
 
+void sens_warna()
+{
+    lcd_clear();
+    lcd_gotoxy(0, 0);
+    lcd_putsf("Sens Warna");
+
+    lcd_gotoxy(0, 1);
+    lcd_putsf("Warna:");
+
+    isTestTombol = true;
+    bawah_lepas();
+    delay(200);
+    ambil(20);
+    while (1)
+    {
+        bacawarna();
+        if (!isTestTombol) { lcd_clear(); capit_lepas; changeMenu(0, false, 0); break; }
+        if ((t1 == 0))
+        {
+            lcd_gotoxy(0, 0);
+            lcd_putsf("Exiting...");
+
+            isTestTombol = false;
+            delay(50);
+        }
+    }
+    
+}
+
+void test_capit()
+{
+    lcd_clear();
+    lcd_gotoxy(0, 0);
+    lcd_putsf("Test Capit");
+
+    lcd_gotoxy(0, 1);
+    lcd_putsf("Capit: > <");
+    capit_ambil;
+    delay(50);
+
+    lcd_gotoxy(0, 1);
+    lcd_putsf("Capit: < >");
+    capit_lepas;
+    delay(100);
+    
+    lcd_gotoxy(0, 1);
+    lcd_putsf("Capit: \\/");
+    lengan_bawah;
+    delay(100);
+
+    lcd_gotoxy(0, 1);
+    lcd_putsf("Capit: /\\");
+    lengan_atas;
+    delay(100);
+}
+
 void tepuk_tangan() {
 
     lcd_clear();
@@ -257,6 +320,13 @@ void tepuk_tangan() {
 
 //     maju(kecepatanki, kecepatanka);
 // }
+
+void display_map() {
+    cek_sensor();
+    lcd_gotoxy(7, 0);
+    sprintf(buff, "%d", mapMirror);
+    lcd_puts(buff);
+}
 
 void tes_sensor()
 {

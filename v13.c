@@ -23,7 +23,7 @@
 #define         pwmki           OCR1A
 #define         pwmka           OCR1B
 
-#define         servo_gulung    PORTC.5
+// #define         servo_gulung    PORTC.5
 #define         servo1          PORTC.6
 #define         servo2          PORTC.7
 
@@ -31,10 +31,10 @@
 #define         lengan_tengah   pos_servo2=234;
 #define         lengan_atas     pos_servo2=234; //
 #define         capit_lepas     pos_servo1=230;
-#define         capit_ambil     pos_servo1=238;
+#define         capit_ambil     pos_servo1=237;
 
-#define         gulung_on       pos_gulung=245;
-#define         gulung_stop     pos_gulung=255;
+// #define         gulung_on       pos_gulung=245;
+// #define         gulung_stop     pos_gulung=255;
 
 #define         merah   0
 #define         kuning  1
@@ -62,27 +62,19 @@ unsigned char read_adc(unsigned char adc_input)
 }
 
 // Declare your global variables here         
-int hitung = 0, mulai = 0;
-unsigned int nadc7 = 0, nilai_warna = 0;
-int buttonhold[4] = {0, 0, 0, 0};
+int hitung = 0;
+unsigned int nadc7 = 0;
 char buff[33];
-int i, j, k, rka = 0, rki = 0, k_mtr = 170;  
-bit x, kondisi;    
-unsigned char kecepatanki = 0, kecepatanka = 0;    
-unsigned char pos_servo1, pos_servo2, pos_gulung, a, pos_led1, pos_led2;
-char simpan;
-int capit = 0, angkat = 0, _maju = 0, _mundur = 0, mode_kec = 0;
-char arr[16], irr[16];
-int push = 1;
+int i, k;
+// unsigned char pos_servo1, pos_servo2, pos_gulung, a, pos_led1, pos_led2;
+unsigned char pos_servo1, pos_servo2, a;
 
 int count_btn = 0;
 int count_child_btn = 0;
 bool isChildSelect = false;
 bool isTestTombol = false;
 
-int positionD = 0;
-
-eeprom int garis[7], back[7], tengah[7], mapMirror[1];
+eeprom int garis[7], back[7], tengah[7];
 
 char sen[7];
 int sensor;
@@ -100,6 +92,7 @@ int MAX_SPEED = 200;
 int count = 0;
 int second = 0;
 
+#include "a-variable.c"
 #include "lib/func.c"
 #include "lib/sensor-func.c"
 #include "lib/motor-func.c"
@@ -132,14 +125,14 @@ interrupt[TIM0_OVF] void timer0_ovf_isr(void)
     {
         servo2 = 1;
     }
-    if (a <= pos_gulung)
-    {
-        servo_gulung = 0;
-    }
-    else
-    {
-        servo_gulung = 1;
-    }
+    // if (a <= pos_gulung)
+    // {
+    //     servo_gulung = 0;
+    // }
+    // else
+    // {
+    //     servo_gulung = 1;
+    // }
 }
 
 // Timer 0 output compare interrupt service routine
@@ -246,10 +239,10 @@ void main(void)
     lampu = 0;    //
                   // k,b
     lcd_gotoxy(0, 0);
-    lcd_putsf("LEGION");
+    lcd_putsf("     LEGION     ");
     lcd_gotoxy(0, 1);
-    lcd_putsf("MAN 4 JOMBANG");
-    delay_ms(100);
+    lcd_putsf(" MAN 4 JOMBANG ");
+    delay_ms(50);
     lcd_clear();
 
 // PROGRAM UTAMA
@@ -257,11 +250,11 @@ void main(void)
 #asm("sei")
     lengan_atas;
     capit_lepas;
-    gulung_stop;
+    // gulung_stop;
 
     /// mapMirror = 0 - map/lintasan bagian biru
     /// mapMirror = 1 - map/lintasan bagian merah
-    if(mapMirror[0] != 0 && mapMirror[0] != 1) mapMirror[0] = 0;
+    if(mapMirror != 0 && mapMirror != 1) mapMirror = 0;
 
     lcd_clear();
     lcd_gotoxy(0, 0);
@@ -273,6 +266,7 @@ void main(void)
         if(!isChildSelect) {
             display_sensor();
             bacawarna();
+            display_map();
         }
 
         // lcd_gotoxy(0, 1);
@@ -284,7 +278,7 @@ void main(void)
             // Program_Jalan();
 
             if(!isChildSelect) count_btn ++;
-            if(isChildSelect) count_child_btn ++;
+            // if(isChildSelect) count_child_btn ++;
             if(count_btn >= 6) count_btn = 0;
             delay(10);
             changeMenu(count_btn, false, count_child_btn);
