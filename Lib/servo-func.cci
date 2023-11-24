@@ -1,6 +1,0 @@
-VERSION:3 SOURCE_TIMESTAMP:57734BA4
-NODE:F LEVEL:0 LINE:1 "griper(void)"
-NODE:F LEVEL:0 LINE:17 "ambil(int lama)"
-NODE:F LEVEL:0 LINE:25 "taruh(int lama)"
-NODE:F LEVEL:0 LINE:34 "bawah_lepas(void)"
-NODE:F LEVEL:0 LINE:40 "atas_lepas(void)"

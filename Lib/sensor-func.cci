@@ -1,9 +1,0 @@
-VERSION:3 SOURCE_TIMESTAMP:577880E4
-NODE:F LEVEL:0 LINE:2 "konvert_logic(void)"
-NODE:F LEVEL:0 LINE:14 "logika(void)"
-NODE:F LEVEL:0 LINE:18 "cek_sensor(void)"
-NODE:F LEVEL:0 LINE:23 "display_sensor(void)"
-NODE:F LEVEL:0 LINE:32 "scan_garis(void)"
-NODE:F LEVEL:0 LINE:48 "scan_back(void)"
-NODE:F LEVEL:0 LINE:64 "hit_tengah(void)"
-NODE:F LEVEL:0 LINE:80 "cekdatasensor(void)"
