@@ -1430,7 +1430,7 @@ _0x3:
 ;int minKuning = 5;
 ;int minMerah = 85;
 ;void delay(int ms)
-; 0000 0060 {
+; 0000 005F {
 
 	.CSEG
 _delay:
@@ -1452,7 +1452,7 @@ _delay:
 ;lampu=1;
 ;delay_ms(100);
 ;void konvert_logic()
-; 0000 0061 {
+; 0000 0060 {
 _konvert_logic:
 ; .FSTART _konvert_logic
 ;for(i = 0; i < 7; i++)
@@ -1736,7 +1736,7 @@ _0x2E:
 ;lcd_puts(buff);
 ;delay_ms(200);
 ;void maju(unsigned char ki, unsigned char ka)
-; 0000 0062 {
+; 0000 0061 {
 _maju:
 ; .FSTART _maju
 ;pwmka = ka;
@@ -2541,7 +2541,7 @@ _0xDF:
 ;void belokKanan(int kec, int lama_rem) {
 _belokKanan:
 ; .FSTART _belokKanan
-;if(mapMirror == 0) {
+;if(mapMirror == map_biru) {
 	CALL SUBOPT_0x1D
 ;	kec -> Y+2
 ;	lama_rem -> Y+0
@@ -2561,7 +2561,7 @@ _0xE8:
 ;void belokKiri(int kec, int lama_rem) {
 _belokKiri:
 ; .FSTART _belokKiri
-;if(mapMirror == 0) {
+;if(mapMirror == map_biru) {
 	CALL SUBOPT_0x1D
 ;	kec -> Y+2
 ;	lama_rem -> Y+0
@@ -2581,7 +2581,7 @@ _0x20C0010:
 	RET
 ; .FEND
 ;void griper()
-; 0000 0064 {
+; 0000 0063 {
 ;capit_lepas;
 ;lengan_tengah;
 ;delay_ms(5000);
@@ -2650,7 +2650,7 @@ _bawah_lepas:
 ;lengan_atas;
 ;capit_lepas;
 ;void bacawarna()
-; 0000 0065 {
+; 0000 0064 {
 _bacawarna:
 ; .FSTART _bacawarna
 ;nadc7 = read_adc(7);
@@ -2692,7 +2692,7 @@ _checkWarna:
 	RCALL _read_adc
 	MOV  R6,R30
 	CLR  R7
-;if(nadc7>minMerah && nadc7<maxMerah){
+;if(nadc7 > minMerah && nadc7 < maxMerah){
 	LDS  R30,_minMerah
 	LDS  R31,_minMerah+1
 	CP   R30,R6
@@ -2708,7 +2708,7 @@ _0xEC:
 _0xED:
 ;warna = 0;
 	__GETWRN 16,17,0
-;else if(nadc7>minKuning && nadc7<maxKuning){
+;} else if(nadc7 > minKuning && nadc7 < maxKuning){
 	RJMP _0xEE
 _0xEB:
 	LDS  R30,_minKuning
@@ -2726,7 +2726,7 @@ _0xF0:
 _0xF1:
 ;warna = 1;
 	__GETWRN 16,17,1
-;else if(nadc7>minHijau && nadc7<maxHijau){
+;} else if(nadc7 > minHijau && nadc7 < maxHijau){
 	RJMP _0xF2
 _0xEF:
 	LDS  R30,_minHijau
@@ -2744,7 +2744,7 @@ _0xF4:
 _0xF5:
 ;warna = 2;
 	__GETWRN 16,17,2
-;}else{
+;} else {
 	RJMP _0xF6
 _0xF3:
 ;warna = 3;
@@ -2761,7 +2761,7 @@ _0xEE:
 ;int isWarna;
 ;void balikKiri(void);
 ;void fromBtoGreen()
-; 0000 0066 {
+; 0000 0065 {
 _fromBtoGreen:
 ; .FSTART _fromBtoGreen
 ;scanX(2, 120);
@@ -3652,29 +3652,22 @@ _0x120:
 ;void map_select(int map_num);
 ;void sens_warna(void);
 ;void test_capit(void);
-;void changeMenu(int menuSelect, bool isSelect, int childMenuSelect) {
-; 0000 0067 void changeMenu(int menuSelect, _Bool isSelect, int childMenuSelect) {
+;void changeMenu(int menuSelect, bool isSelect) {
+; 0000 0066 void changeMenu(int menuSelect, _Bool isSelect) {
 _changeMenu:
 ; .FSTART _changeMenu
 ;lampu = 0;
-	ST   -Y,R27
 	ST   -Y,R26
-;	menuSelect -> Y+3
-;	isSelect -> Y+2
-;	childMenuSelect -> Y+0
+;	menuSelect -> Y+1
+;	isSelect -> Y+0
 	CBI  0x18,3
 ;count_btn = menuSelect;
-	LDD  R30,Y+3
-	LDD  R31,Y+3+1
+	LDD  R30,Y+1
+	LDD  R31,Y+1+1
 	STS  _count_btn,R30
 	STS  _count_btn+1,R31
-;count_child_btn = childMenuSelect;
-	LD   R30,Y
-	LDD  R31,Y+1
-	STS  _count_child_btn,R30
-	STS  _count_child_btn+1,R31
 ;if(!isSelect && !isChildSelect) {
-	LDD  R30,Y+2
+	LD   R30,Y
 	CPI  R30,0
 	BRNE _0x128
 	LDS  R30,_isChildSelect
@@ -3691,13 +3684,13 @@ _0x129:
 	CALL _lcd_putsf
 ;switch (menuSelect) {
 _0x127:
-	LDD  R30,Y+3
-	LDD  R31,Y+3+1
+	LDD  R30,Y+1
+	LDD  R31,Y+1+1
 ;case 0: // Calibration
 	SBIW R30,0
 	BRNE _0x12D
 ;if(isSelect) { calibration(); break; }
-	LDD  R30,Y+2
+	LD   R30,Y
 	CPI  R30,0
 	BREQ _0x12E
 	RCALL _calibration
@@ -3718,7 +3711,7 @@ _0x12D:
 	CPC  R31,R26
 	BRNE _0x12F
 ;if(isSelect || isChildSelect) { runBot(); break; }
-	LDD  R30,Y+2
+	LD   R30,Y
 	CPI  R30,0
 	BRNE _0x131
 	LDS  R30,_isChildSelect
@@ -3743,7 +3736,7 @@ _0x12F:
 	CPC  R31,R26
 	BRNE _0x133
 ;if(isSelect) { sens_warna(); break; }
-	LDD  R30,Y+2
+	LD   R30,Y
 	CPI  R30,0
 	BREQ _0x134
 	RCALL _sens_warna
@@ -3763,8 +3756,8 @@ _0x133:
 	LDI  R26,HIGH(0x3)
 	CPC  R31,R26
 	BRNE _0x135
-;if(isSelect || isChildSelect) { map_select(0); break; }
-	LDD  R30,Y+2
+;if(isSelect || isChildSelect) { map_select(map_biru); break; }
+	LD   R30,Y
 	CPI  R30,0
 	BRNE _0x137
 	LDS  R30,_isChildSelect
@@ -3790,8 +3783,8 @@ _0x135:
 	LDI  R26,HIGH(0x4)
 	CPC  R31,R26
 	BRNE _0x139
-;if(isSelect || isChildSelect) { map_select(1); break; }
-	LDD  R30,Y+2
+;if(isSelect || isChildSelect) { map_select(map_merah); break; }
+	LD   R30,Y
 	CPI  R30,0
 	BRNE _0x13B
 	LDS  R30,_isChildSelect
@@ -3818,7 +3811,7 @@ _0x139:
 	CPC  R31,R26
 	BRNE _0x13D
 ;if(isSelect) { test_motor(); break; }
-	LDD  R30,Y+2
+	LD   R30,Y
 	CPI  R30,0
 	BREQ _0x13E
 	RCALL _test_motor
@@ -3839,7 +3832,7 @@ _0x13D:
 	CPC  R31,R26
 	BRNE _0x13F
 ;if(isSelect) { test_tombol(); break; }
-	LDD  R30,Y+2
+	LD   R30,Y
 	CPI  R30,0
 	BREQ _0x140
 	RCALL _test_tombol
@@ -3860,7 +3853,7 @@ _0x13F:
 	CPC  R31,R26
 	BRNE _0x143
 ;if(isSelect) { test_capit(); break; }
-	LDD  R30,Y+2
+	LD   R30,Y
 	CPI  R30,0
 	BREQ _0x142
 	RCALL _test_capit
@@ -3877,7 +3870,7 @@ _0x142:
 _0x143:
 ;break;
 _0x12C:
-	RJMP _0x20C0005
+	JMP  _0x20C0003
 ; .FEND
 ;void runBot() {
 _runBot:
@@ -3916,13 +3909,8 @@ _0x144:
 ;Program_Jalan();
 	RCALL _Program_Jalan
 ;isChildSelect = false;
-	LDI  R30,LOW(0)
-	STS  _isChildSelect,R30
-;count_child_btn = 0;
-	STS  _count_child_btn,R30
-	STS  _count_child_btn+1,R30
-;changeMenu(0, false, 0);
 	CALL SUBOPT_0x3A
+;changeMenu(0, false);
 _0x146:
 _0x145:
 	RET
@@ -3944,7 +3932,7 @@ _calibration:
 	RCALL _hit_tengah
 ;isChildSelect = false;
 	RJMP _0x20C0006
-;changeMenu(0, false, 0);
+;changeMenu(0, false);
 ; .FEND
 ;void map_select(int map_num) {
 _map_select:
@@ -3973,11 +3961,9 @@ _0x147:
 	LDI  R27,HIGH(_mapMirror)
 	CALL __EEPROMWRW
 ;isChildSelect = false;
-	LDI  R30,LOW(0)
-	STS  _isChildSelect,R30
-;changeMenu(0, false, 0);
 	CALL SUBOPT_0x3A
-	JMP  _0x20C0003
+;changeMenu(0, false);
+	JMP  _0x20C0004
 ; .FEND
 ;void test_motor()
 _test_motor:
@@ -4029,8 +4015,8 @@ _test_motor:
 _0x20C0006:
 	LDI  R30,LOW(0)
 	STS  _isChildSelect,R30
-;changeMenu(0, false, 0);
-	CALL SUBOPT_0x3A
+;changeMenu(0, false);
+	CALL SUBOPT_0x3F
 	RET
 ; .FEND
 ;void test_tombol()
@@ -4059,11 +4045,11 @@ _0x14A:
 	CALL SUBOPT_0x3
 ;lcd_putsf("tombol = 1     ");
 	__POINTW2FN _0x0,269
-	CALL SUBOPT_0x3F
+	CALL SUBOPT_0x40
 ;isTestTombol = false;
 ;delay(50);
-;changeMenu(0, false, 0);
-	CALL SUBOPT_0x3A
+;changeMenu(0, false);
+	CALL SUBOPT_0x3F
 ;if (t2 == 0)
 _0x14E:
 	SBIC 0x13,1
@@ -4129,14 +4115,14 @@ _sens_warna:
 _0x152:
 ;bacawarna();
 	RCALL _bacawarna
-;if (!isTestTombol) { lcd_clear(); capit_lepas; changeMenu(0, false, 0); break; }
+;if (!isTestTombol) { lcd_clear(); capit_lepas; changeMenu(0, false); break; }
 	LDS  R30,_isTestTombol
 	CPI  R30,0
 	BRNE _0x155
 	CALL _lcd_clear
 	LDI  R30,LOW(230)
 	MOV  R13,R30
-	CALL SUBOPT_0x3A
+	CALL SUBOPT_0x3F
 	RJMP _0x154
 ;if ((t1 == 0))
 _0x155:
@@ -4147,7 +4133,7 @@ _0x155:
 	CALL SUBOPT_0x3
 ;lcd_putsf("Exiting...");
 	__POINTW2FN _0x0,340
-	CALL SUBOPT_0x3F
+	CALL SUBOPT_0x40
 ;isTestTombol = false;
 ;delay(50);
 _0x156:
@@ -4263,62 +4249,54 @@ _display_map:
 ;sprintf(buff, " %d  ", second);
 ;lcd_puts(buff);
 ;interrupt[TIM0_OVF] void timer0_ovf_isr(void)
-; 0000 006C {
+; 0000 006B {
 _timer0_ovf_isr:
 ; .FSTART _timer0_ovf_isr
 	ST   -Y,R26
 	ST   -Y,R30
 	IN   R30,SREG
 	ST   -Y,R30
-; 0000 006D TCNT0 = 0x96; // BE
+; 0000 006C TCNT0 = 0x96; // BE
 	LDI  R30,LOW(150)
 	OUT  0x32,R30
-; 0000 006E a++;
+; 0000 006D a++;
 	LDS  R30,_a
 	SUBI R30,-LOW(1)
 	STS  _a,R30
-; 0000 006F 
-; 0000 0070 if (a <= pos_servo1)
+; 0000 006E 
+; 0000 006F if (a <= pos_servo1)
 	LDS  R26,_a
 	CP   R13,R26
 	BRLO _0x162
-; 0000 0071 {
-; 0000 0072 servo1 = 0;
+; 0000 0070 {
+; 0000 0071 servo1 = 0;
 	CBI  0x15,6
-; 0000 0073 }
-; 0000 0074 else
+; 0000 0072 }
+; 0000 0073 else
 	RJMP _0x165
 _0x162:
-; 0000 0075 {
-; 0000 0076 servo1 = 1;
+; 0000 0074 {
+; 0000 0075 servo1 = 1;
 	SBI  0x15,6
-; 0000 0077 }
+; 0000 0076 }
 _0x165:
-; 0000 0078 if (a <= pos_servo2)
+; 0000 0077 if (a <= pos_servo2)
 	LDS  R26,_a
 	CP   R12,R26
 	BRLO _0x168
-; 0000 0079 {
-; 0000 007A servo2 = 0;
+; 0000 0078 {
+; 0000 0079 servo2 = 0;
 	CBI  0x15,7
-; 0000 007B }
-; 0000 007C else
+; 0000 007A }
+; 0000 007B else
 	RJMP _0x16B
 _0x168:
-; 0000 007D {
-; 0000 007E servo2 = 1;
+; 0000 007C {
+; 0000 007D servo2 = 1;
 	SBI  0x15,7
-; 0000 007F }
+; 0000 007E }
 _0x16B:
-; 0000 0080 // if (a <= pos_gulung)
-; 0000 0081 // {
-; 0000 0082 //     servo_gulung = 0;
-; 0000 0083 // }
-; 0000 0084 // else
-; 0000 0085 // {
-; 0000 0086 //     servo_gulung = 1;
-; 0000 0087 // }
-; 0000 0088 }
+; 0000 007F }
 	LD   R30,Y+
 	OUT  SREG,R30
 	LD   R30,Y+
@@ -4326,211 +4304,210 @@ _0x16B:
 	RETI
 ; .FEND
 ;interrupt[TIM0_COMP] void timer0_comp_isr(void)
-; 0000 008C {
+; 0000 0083 {
 _timer0_comp_isr:
 ; .FSTART _timer0_comp_isr
-; 0000 008D // Place your code here
-; 0000 008E }
+; 0000 0084 // Place your code here
+; 0000 0085 }
 	RETI
 ; .FEND
 ;void main(void)
-; 0000 0091 {
+; 0000 0088 {
 _main:
 ; .FSTART _main
-; 0000 0092 // Declare your local variables here
-; 0000 0093 
-; 0000 0094 // Input/Output Ports initialization
-; 0000 0095 // Port A initialization
-; 0000 0096 // Func7=In Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=In
-; 0000 0097 // State7=T State6=T State5=T State4=T State3=T State2=T State1=T State0=T
-; 0000 0098 PORTA = 0x00;
+; 0000 0089 // Declare your local variables here
+; 0000 008A 
+; 0000 008B // Input/Output Ports initialization
+; 0000 008C // Port A initialization
+; 0000 008D // Func7=In Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=In
+; 0000 008E // State7=T State6=T State5=T State4=T State3=T State2=T State1=T State0=T
+; 0000 008F PORTA = 0x00;
 	LDI  R30,LOW(0)
 	OUT  0x1B,R30
-; 0000 0099 DDRA = 0x00;
+; 0000 0090 DDRA = 0x00;
 	OUT  0x1A,R30
-; 0000 009A 
-; 0000 009B // Port B initialization
-; 0000 009C // Func7=In Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=In
-; 0000 009D // State7=T State6=T State5=T State4=T State3=T State2=T State1=T State0=T
-; 0000 009E PORTB = 0x08;
+; 0000 0091 
+; 0000 0092 // Port B initialization
+; 0000 0093 // Func7=In Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=In
+; 0000 0094 // State7=T State6=T State5=T State4=T State3=T State2=T State1=T State0=T
+; 0000 0095 PORTB = 0x08;
 	LDI  R30,LOW(8)
 	OUT  0x18,R30
-; 0000 009F DDRB = 0Xff; // 0x08;
+; 0000 0096 DDRB = 0Xff; // 0x08;
 	LDI  R30,LOW(255)
 	OUT  0x17,R30
-; 0000 00A0 
-; 0000 00A1 // Port C initialization
-; 0000 00A2 // Func7=In Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=In
-; 0000 00A3 // State7=T State6=T State5=T State4=T State3=P State2=P State1=P State0=P
-; 0000 00A4 PORTC = 0xFF;
+; 0000 0097 
+; 0000 0098 // Port C initialization
+; 0000 0099 // Func7=In Func6=In Func5=In Func4=In Func3=In Func2=In Func1=In Func0=In
+; 0000 009A // State7=T State6=T State5=T State4=T State3=P State2=P State1=P State0=P
+; 0000 009B PORTC = 0xFF;
 	OUT  0x15,R30
-; 0000 00A5 DDRC = 0xF0; // C0
+; 0000 009C DDRC = 0xF0; // C0
 	LDI  R30,LOW(240)
 	OUT  0x14,R30
-; 0000 00A6 
-; 0000 00A7 // Port D initialization
-; 0000 00A8 // Func7=In Func6=In Func5=Out Func4=Out Func3=In Func2=In Func1=In Func0=In
-; 0000 00A9 // State7=T State6=T State5=0 State4=0 State3=T State2=T State1=T State0=T
-; 0000 00AA PORTD = 0x03;
+; 0000 009D 
+; 0000 009E // Port D initialization
+; 0000 009F // Func7=In Func6=In Func5=Out Func4=Out Func3=In Func2=In Func1=In Func0=In
+; 0000 00A0 // State7=T State6=T State5=0 State4=0 State3=T State2=T State1=T State0=T
+; 0000 00A1 PORTD = 0x03;
 	LDI  R30,LOW(3)
 	OUT  0x12,R30
-; 0000 00AB DDRD = 0xFC; // 3F
+; 0000 00A2 DDRD = 0xFC; // 3F
 	LDI  R30,LOW(252)
 	OUT  0x11,R30
-; 0000 00AC 
-; 0000 00AD // Timer/Counter 0 initialization
-; 0000 00AE TCCR0 = 0x4A;
+; 0000 00A3 
+; 0000 00A4 // Timer/Counter 0 initialization
+; 0000 00A5 TCCR0 = 0x4A;
 	LDI  R30,LOW(74)
 	OUT  0x33,R30
-; 0000 00AF TCNT0 = 0x96;
+; 0000 00A6 TCNT0 = 0x96;
 	LDI  R30,LOW(150)
 	OUT  0x32,R30
-; 0000 00B0 OCR0 = 0x00;
+; 0000 00A7 OCR0 = 0x00;
 	LDI  R30,LOW(0)
 	OUT  0x3C,R30
-; 0000 00B1 
-; 0000 00B2 // Timer/Counter 1 initialization
-; 0000 00B3 TCCR1A = 0xA1;
+; 0000 00A8 
+; 0000 00A9 // Timer/Counter 1 initialization
+; 0000 00AA TCCR1A = 0xA1;
 	LDI  R30,LOW(161)
 	OUT  0x2F,R30
-; 0000 00B4 TCCR1B = 0x09;
+; 0000 00AB TCCR1B = 0x09;
 	LDI  R30,LOW(9)
 	OUT  0x2E,R30
-; 0000 00B5 TCNT1H = 0x00;
+; 0000 00AC TCNT1H = 0x00;
 	LDI  R30,LOW(0)
 	OUT  0x2D,R30
-; 0000 00B6 TCNT1L = 0x00;
+; 0000 00AD TCNT1L = 0x00;
 	OUT  0x2C,R30
-; 0000 00B7 ICR1H = 0x00;
+; 0000 00AE ICR1H = 0x00;
 	OUT  0x27,R30
-; 0000 00B8 ICR1L = 0x00;
+; 0000 00AF ICR1L = 0x00;
 	OUT  0x26,R30
-; 0000 00B9 OCR1AH = 0x00;
+; 0000 00B0 OCR1AH = 0x00;
 	OUT  0x2B,R30
-; 0000 00BA OCR1AL = 0x00;
+; 0000 00B1 OCR1AL = 0x00;
 	OUT  0x2A,R30
-; 0000 00BB OCR1BH = 0x00;
+; 0000 00B2 OCR1BH = 0x00;
 	OUT  0x29,R30
-; 0000 00BC OCR1BL = 0x00;
+; 0000 00B3 OCR1BL = 0x00;
 	OUT  0x28,R30
-; 0000 00BD 
-; 0000 00BE // Timer/Counter 2 initialization
-; 0000 00BF // Clock source: System Clock
-; 0000 00C0 // Clock value: Timer 2 Stopped
-; 0000 00C1 // Mode: Normal top=FFh
-; 0000 00C2 // OC2 output: Disconnected
-; 0000 00C3 ASSR = 0x00;
+; 0000 00B4 
+; 0000 00B5 // Timer/Counter 2 initialization
+; 0000 00B6 // Clock source: System Clock
+; 0000 00B7 // Clock value: Timer 2 Stopped
+; 0000 00B8 // Mode: Normal top=FFh
+; 0000 00B9 // OC2 output: Disconnected
+; 0000 00BA ASSR = 0x00;
 	OUT  0x22,R30
-; 0000 00C4 TCCR2 = 0x00;
+; 0000 00BB TCCR2 = 0x00;
 	OUT  0x25,R30
-; 0000 00C5 TCNT2 = 0x00;
+; 0000 00BC TCNT2 = 0x00;
 	OUT  0x24,R30
-; 0000 00C6 OCR2 = 0x00;
+; 0000 00BD OCR2 = 0x00;
 	OUT  0x23,R30
-; 0000 00C7 
-; 0000 00C8 // External Interrupt(s) initialization
-; 0000 00C9 // INT0: Off
-; 0000 00CA // INT1: Off
-; 0000 00CB // INT2: Off
-; 0000 00CC MCUCR = 0x00;
+; 0000 00BE 
+; 0000 00BF // External Interrupt(s) initialization
+; 0000 00C0 // INT0: Off
+; 0000 00C1 // INT1: Off
+; 0000 00C2 // INT2: Off
+; 0000 00C3 MCUCR = 0x00;
 	OUT  0x35,R30
-; 0000 00CD MCUCSR = 0x00;
+; 0000 00C4 MCUCSR = 0x00;
 	OUT  0x34,R30
-; 0000 00CE 
-; 0000 00CF // Timer(s)/Counter(s) Interrupt(s) initialization
-; 0000 00D0 TIMSK = 0x01;
+; 0000 00C5 
+; 0000 00C6 // Timer(s)/Counter(s) Interrupt(s) initialization
+; 0000 00C7 TIMSK = 0x01;
 	LDI  R30,LOW(1)
 	OUT  0x39,R30
-; 0000 00D1 
-; 0000 00D2 // Analog Comparator initialization
-; 0000 00D3 // Analog Comparator: Off
-; 0000 00D4 // Analog Comparator Input Capture by Timer/Counter 1: Off
-; 0000 00D5 ACSR = 0x80;
+; 0000 00C8 
+; 0000 00C9 // Analog Comparator initialization
+; 0000 00CA // Analog Comparator: Off
+; 0000 00CB // Analog Comparator Input Capture by Timer/Counter 1: Off
+; 0000 00CC ACSR = 0x80;
 	LDI  R30,LOW(128)
 	OUT  0x8,R30
-; 0000 00D6 SFIOR = 0x00;
+; 0000 00CD SFIOR = 0x00;
 	LDI  R30,LOW(0)
 	OUT  0x30,R30
-; 0000 00D7 
-; 0000 00D8 MCUCR = 0x00;
+; 0000 00CE 
+; 0000 00CF MCUCR = 0x00;
 	OUT  0x35,R30
-; 0000 00D9 MCUCSR = 0x00;
+; 0000 00D0 MCUCSR = 0x00;
 	OUT  0x34,R30
-; 0000 00DA 
-; 0000 00DB // USART, UNTUK KOMUNIKASI BLUETOOTH
-; 0000 00DC UCSRA = 0x00;
+; 0000 00D1 
+; 0000 00D2 // USART, UNTUK KOMUNIKASI BLUETOOTH
+; 0000 00D3 UCSRA = 0x00;
 	OUT  0xB,R30
-; 0000 00DD UCSRB = 0x18;
+; 0000 00D4 UCSRB = 0x18;
 	LDI  R30,LOW(24)
 	OUT  0xA,R30
-; 0000 00DE UCSRC = 0x86;
+; 0000 00D5 UCSRC = 0x86;
 	LDI  R30,LOW(134)
 	OUT  0x20,R30
-; 0000 00DF UBRRH = 0x00;
+; 0000 00D6 UBRRH = 0x00;
 	LDI  R30,LOW(0)
 	OUT  0x20,R30
-; 0000 00E0 UBRRL = 0x47;
+; 0000 00D7 UBRRL = 0x47;
 	LDI  R30,LOW(71)
 	OUT  0x9,R30
-; 0000 00E1 // ADC initialization
-; 0000 00E2 // ADC Clock frequency: 691.200 kHz
-; 0000 00E3 // ADC Voltage Reference: AVCC pin
-; 0000 00E4 // ADC Auto Trigger Source: None
-; 0000 00E5 // Only the 8 most significant bits of
-; 0000 00E6 // the AD conversion result are used
-; 0000 00E7 ADMUX = ADC_VREF_TYPE & 0xff;
+; 0000 00D8 // ADC initialization
+; 0000 00D9 // ADC Clock frequency: 691.200 kHz
+; 0000 00DA // ADC Voltage Reference: AVCC pin
+; 0000 00DB // ADC Auto Trigger Source: None
+; 0000 00DC // Only the 8 most significant bits of
+; 0000 00DD // the AD conversion result are used
+; 0000 00DE ADMUX = ADC_VREF_TYPE & 0xff;
 	LDI  R30,LOW(96)
 	OUT  0x7,R30
-; 0000 00E8 ADCSRA = 0x84;
+; 0000 00DF ADCSRA = 0x84;
 	LDI  R30,LOW(132)
 	OUT  0x6,R30
-; 0000 00E9 // ADCSRA=0xA6;
-; 0000 00EA SFIOR &= 0x1F;
+; 0000 00E0 // ADCSRA=0xA6;
+; 0000 00E1 SFIOR &= 0x1F;
 	IN   R30,0x30
 	ANDI R30,LOW(0x1F)
 	OUT  0x30,R30
-; 0000 00EB 
-; 0000 00EC // LCD module initialization
-; 0000 00ED lcd_init(16); //
+; 0000 00E2 
+; 0000 00E3 // LCD module initialization
+; 0000 00E4 lcd_init(16); //
 	LDI  R26,LOW(16)
 	CALL _lcd_init
-; 0000 00EE lcd_clear();  //
+; 0000 00E5 lcd_clear();  //
 	CALL _lcd_clear
-; 0000 00EF lampu = 0;    //
+; 0000 00E6 lampu = 0;    //
 	CBI  0x18,3
-; 0000 00F0 // k,b
-; 0000 00F1 lcd_gotoxy(0, 0);
+; 0000 00E7 // k,b
+; 0000 00E8 lcd_gotoxy(0, 0);
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x3
-; 0000 00F2 lcd_putsf("     LEGION     ");
+; 0000 00E9 lcd_putsf("     LEGION     ");
 	__POINTW2FN _0x0,422
 	CALL SUBOPT_0x39
-; 0000 00F3 lcd_gotoxy(0, 1);
-; 0000 00F4 lcd_putsf(" MAN 4 JOMBANG ");
+; 0000 00EA lcd_gotoxy(0, 1);
+; 0000 00EB lcd_putsf(" MAN 4 JOMBANG ");
 	__POINTW2FN _0x0,439
 	CALL _lcd_putsf
-; 0000 00F5 delay_ms(50);
+; 0000 00EC delay_ms(50);
 	LDI  R26,LOW(50)
 	LDI  R27,0
 	CALL _delay_ms
-; 0000 00F6 lcd_clear();
+; 0000 00ED lcd_clear();
 	CALL _lcd_clear
-; 0000 00F7 
-; 0000 00F8 // PROGRAM UTAMA
-; 0000 00F9 // Global enable interrupts
-; 0000 00FA #asm("sei")
+; 0000 00EE 
+; 0000 00EF // PROGRAM UTAMA
+; 0000 00F0 // Global enable interrupts
+; 0000 00F1 #asm("sei")
 	SEI
-; 0000 00FB lengan_atas;
+; 0000 00F2 lengan_atas;
 	LDI  R30,LOW(234)
 	MOV  R12,R30
-; 0000 00FC capit_lepas;
+; 0000 00F3 capit_lepas;
 	LDI  R30,LOW(230)
 	MOV  R13,R30
-; 0000 00FD // gulung_stop;
-; 0000 00FE 
-; 0000 00FF /// mapMirror = 0 - map/lintasan bagian biru
-; 0000 0100 /// mapMirror = 1 - map/lintasan bagian merah
-; 0000 0101 if(mapMirror != 0 && mapMirror != 1) mapMirror = 0;
+; 0000 00F4 
+; 0000 00F5 /// mapMirror = 0 - map/lintasan bagian biru
+; 0000 00F6 /// mapMirror = 1 - map/lintasan bagian merah
+; 0000 00F7 if(mapMirror != map_biru && mapMirror != map_merah) mapMirror = map_biru;
 	LDI  R26,LOW(_mapMirror)
 	LDI  R27,HIGH(_mapMirror)
 	CALL __EEPROMRDW
@@ -4548,53 +4525,46 @@ _0x172:
 	LDI  R30,LOW(0)
 	LDI  R31,HIGH(0)
 	CALL __EEPROMWRW
-; 0000 0102 
-; 0000 0103 lcd_clear();
+; 0000 00F8 
+; 0000 00F9 lcd_clear();
 _0x170:
 	CALL SUBOPT_0x38
-; 0000 0104 lcd_gotoxy(0, 0);
-; 0000 0105 lcd_putsf("Menu");
+; 0000 00FA lcd_gotoxy(0, 0);
+; 0000 00FB lcd_putsf("Menu");
 	__POINTW2FN _0x0,100
 	CALL SUBOPT_0x39
-; 0000 0106 lcd_gotoxy(0, 1);
-; 0000 0107 lcd_putsf("Calibration");
+; 0000 00FC lcd_gotoxy(0, 1);
+; 0000 00FD lcd_putsf("Calibration");
 	__POINTW2FN _0x0,105
 	CALL _lcd_putsf
-; 0000 0108 
-; 0000 0109 while(1) {
+; 0000 00FE 
+; 0000 00FF while(1) {
 _0x173:
-; 0000 010A if(!isChildSelect) {
+; 0000 0100 if(!isChildSelect) {
 	LDS  R30,_isChildSelect
 	CPI  R30,0
 	BRNE _0x176
-; 0000 010B display_sensor();
+; 0000 0101 display_sensor();
 	CALL _display_sensor
-; 0000 010C bacawarna();
+; 0000 0102 bacawarna();
 	RCALL _bacawarna
-; 0000 010D display_map();
+; 0000 0103 display_map();
 	RCALL _display_map
-; 0000 010E }
-; 0000 010F 
-; 0000 0110 // lcd_gotoxy(0, 1);
-; 0000 0111 // sprintf(buff, "button1 = %d  ", count_btn);
-; 0000 0112 // lcd_puts(buff);
-; 0000 0113 
-; 0000 0114 //bacawarna();
-; 0000 0115 if((t1 == 0)) {
+; 0000 0104 }
+; 0000 0105 
+; 0000 0106 if((t1 == 0)) {
 _0x176:
 	SBIC 0x13,0
 	RJMP _0x177
-; 0000 0116 // Program_Jalan();
-; 0000 0117 
-; 0000 0118 if(!isChildSelect) count_btn ++;
+; 0000 0107 
+; 0000 0108 if(!isChildSelect) count_btn ++;
 	LDS  R30,_isChildSelect
 	CPI  R30,0
 	BRNE _0x178
 	LDI  R26,LOW(_count_btn)
 	LDI  R27,HIGH(_count_btn)
 	CALL SUBOPT_0x19
-; 0000 0119 // if(isChildSelect) count_child_btn ++;
-; 0000 011A if(count_btn >= 7) count_btn = 0;
+; 0000 0109 if(count_btn >= 7) count_btn = 0;
 _0x178:
 	LDS  R26,_count_btn
 	LDS  R27,_count_btn+1
@@ -4603,123 +4573,33 @@ _0x178:
 	LDI  R30,LOW(0)
 	STS  _count_btn,R30
 	STS  _count_btn+1,R30
-; 0000 011B delay(10);
+; 0000 010A delay(10);
 _0x179:
 	LDI  R26,LOW(10)
 	LDI  R27,0
 	CALL _delay
-; 0000 011C changeMenu(count_btn, false, count_child_btn);
-	CALL SUBOPT_0x40
-	LDI  R30,LOW(0)
+; 0000 010B changeMenu(count_btn, false);
 	CALL SUBOPT_0x41
-; 0000 011D 
-; 0000 011E // buttonhold[0] += 1;
-; 0000 011F // while((t1 == 0) && !isTestTombol && !isDelayClick1) {
-; 0000 0120 //     isDelayClick1 = true;
-; 0000 0121 //     delay(3);
-; 0000 0122 //     if(buttonhold[0] > 20) {
-; 0000 0123 //         isSelect = true;
-; 0000 0124 //         changeMenu();
-; 0000 0125 //     } else {
-; 0000 0126 //         isSelect = false; isChildSelect = false;
-; 0000 0127 //         changeMenu();
-; 0000 0128 //         buttonhold[0] = 0;
-; 0000 0129 //     }
-; 0000 012A //     isDelayClick1 = false; break;
-; 0000 012B // }
-; 0000 012C // lcd_gotoxy(0, 0);
-; 0000 012D // sprintf(buff, "button1 = %d  ", button1click);
-; 0000 012E }
-; 0000 012F if((t2 == 0)) {
+	LDI  R26,LOW(0)
+	RCALL _changeMenu
+; 0000 010C }
+; 0000 010D if((t2 == 0)) {
 _0x177:
 	SBIC 0x13,1
 	RJMP _0x17A
-; 0000 0130 changeMenu(count_btn, true, count_child_btn);
-	CALL SUBOPT_0x40
-	LDI  R30,LOW(1)
+; 0000 010E changeMenu(count_btn, true);
 	CALL SUBOPT_0x41
-; 0000 0131 delay(10);
+	LDI  R26,LOW(1)
+	RCALL _changeMenu
+; 0000 010F delay(10);
 	LDI  R26,LOW(10)
 	LDI  R27,0
 	CALL _delay
-; 0000 0132 }
-; 0000 0133 // lcd_puts(buff);
-; 0000 0134 // } else if((t1 == 1)) {
-; 0000 0135 //     buttonhold[0] = 0;
-; 0000 0136 //     isDelayClick1 = false;
-; 0000 0137 // }
-; 0000 0138 
-; 0000 0139 // if ((count_btn==0) && (t2==0)){
-; 0000 013A //     lcd_clear();
-; 0000 013B //     lcd_gotoxy(0, 0);
-; 0000 013C //     lcd_putsf("menu 1");
-; 0000 013D // } else if((count_btn == 1) && (t2 == 0)) {
-; 0000 013E //     lcd_clear();
-; 0000 013F //     lcd_gotoxy(0, 0);
-; 0000 0140 //     lcd_putsf("menu 2");
-; 0000 0141 // } else if((count_btn == 2) && (t2 == 0)) {
-; 0000 0142 //     lcd_clear();
-; 0000 0143 //     lcd_gotoxy(0, 0);
-; 0000 0144 //     lcd_putsf("menu 3");
-; 0000 0145 // } else if((count_btn == 3) && (t2 == 0)) {
-; 0000 0146 //     lcd_clear();
-; 0000 0147 //     lcd_gotoxy(0, 0);
-; 0000 0148 //     lcd_putsf("menu 4");
-; 0000 0149 // } else if((count_btn == 4) && (t2 == 0)) {
-; 0000 014A //     lcd_clear();
-; 0000 014B //     lcd_gotoxy(0, 0);
-; 0000 014C //     lcd_putsf("menu 5");
-; 0000 014D // } else if((count_btn == 5) && (t2 == 0)) {
-; 0000 014E //     lcd_clear();
-; 0000 014F //     lcd_gotoxy(0, 0);
-; 0000 0150 //     lcd_putsf("menu 6");
-; 0000 0151 // } else if((count_btn == 6) && (t2 == 0)) {
-; 0000 0152 //     lcd_clear();
-; 0000 0153 //     lcd_gotoxy(0, 0);
-; 0000 0154 //     lcd_putsf("menu 7");
-; 0000 0155 // } else if((count_btn == 7) && (t2 == 0)) {
-; 0000 0156 //     lcd_clear();
-; 0000 0157 //     lcd_gotoxy(0, 0);
-; 0000 0158 //     lcd_putsf("menu 8");
-; 0000 0159 // } else if((count_btn == 8) && (t2 == 0)) {
-; 0000 015A //     lcd_clear();
-; 0000 015B //     lcd_gotoxy(0, 0);
-; 0000 015C //     lcd_putsf("menu 9");
-; 0000 015D // } else if((count_btn == 9) && (t2 == 0)) {
-; 0000 015E //     lcd_clear();
-; 0000 015F //     lcd_gotoxy(0, 0);
-; 0000 0160 //     lcd_putsf("menu 10");
-; 0000 0161 // } else if((count_btn == 10) && (t2 == 0)) {
-; 0000 0162 //     lcd_clear();
-; 0000 0163 //     lcd_gotoxy(0, 0);
-; 0000 0164 // }
-; 0000 0165 
-; 0000 0166 // if (    (t2 == 0)
-; 0000 0167 //         && !isTestTombol
-; 0000 0168 //         && (!isChildSelect && menuSelect == 0) // Jika Menu di Run Bot, janga ...
-; 0000 0169 //     ) {
-; 0000 016A 
-; 0000 016B //         // lengan_bawah;
-; 0000 016C //         // delay(50);
-; 0000 016D //     // menuSelect += 1;
-; 0000 016E //     // if(menuSelect >= 4) menuSelect = 0;
-; 0000 016F //     // changeMenu();
-; 0000 0170 
-; 0000 0171 //     scan_garis();
-; 0000 0172 //     delay(300);
-; 0000 0173 //     scan_back();
-; 0000 0174 //     delay(100);
-; 0000 0175 //     hit_tengah();
-; 0000 0176 
-; 0000 0177 //     // button1click = 0;
-; 0000 0178 //     // lcd_gotoxy(0, 0);
-; 0000 0179 //     // sprintf(buff, "button1 = %d  ", button1click);
-; 0000 017A //     // lcd_puts(buff);
-; 0000 017B // }
-; 0000 017C }
+; 0000 0110 }
+; 0000 0111 }
 _0x17A:
 	RJMP _0x173
-; 0000 017D }
+; 0000 0112 }
 _0x17B:
 	RJMP _0x17B
 ; .FEND
@@ -4788,7 +4668,6 @@ _0x2000010:
 _0x2000015:
 	LDD  R17,Y+1
 	LDD  R16,Y+0
-_0x20C0005:
 	ADIW R28,5
 	RET
 ; .FEND
@@ -5176,7 +5055,7 @@ _sprintf:
 	BRNE _0x2000072
 	LDI  R30,LOW(65535)
 	LDI  R31,HIGH(65535)
-	RJMP _0x20C0004
+	RJMP _0x20C0005
 _0x2000072:
 	MOVW R26,R28
 	ADIW R26,6
@@ -5214,7 +5093,7 @@ _0x2000072:
 	LDI  R30,LOW(0)
 	ST   X,R30
 	MOVW R30,R18
-_0x20C0004:
+_0x20C0005:
 	CALL __LOADLOCR4
 	ADIW R28,10
 	POP  R15
@@ -5392,7 +5271,7 @@ _lcd_gotoxy:
 	STS  __lcd_x,R30
 	LD   R30,Y
 	STS  __lcd_y,R30
-_0x20C0003:
+_0x20C0004:
 	ADIW R28,2
 	RET
 ; .FEND
@@ -5490,6 +5369,7 @@ _0x2060008:
 _0x206000A:
 _0x20C0002:
 	LDD  R17,Y+0
+_0x20C0003:
 	ADIW R28,3
 	RET
 ; .FEND
@@ -5571,8 +5451,6 @@ _buff:
 _a:
 	.BYTE 0x1
 _count_btn:
-	.BYTE 0x2
-_count_child_btn:
 	.BYTE 0x2
 _isChildSelect:
 	.BYTE 0x1
@@ -6123,15 +6001,15 @@ SUBOPT_0x39:
 	LDI  R30,LOW(0)
 	RJMP SUBOPT_0x1F
 
-;OPTIMIZER ADDED SUBROUTINE, CALLED 5 TIMES, CODE SIZE REDUCTION:29 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:5 WORDS
 SUBOPT_0x3A:
+	LDI  R30,LOW(0)
+	STS  _isChildSelect,R30
 	LDI  R30,LOW(0)
 	LDI  R31,HIGH(0)
 	ST   -Y,R31
 	ST   -Y,R30
-	ST   -Y,R30
 	LDI  R26,LOW(0)
-	LDI  R27,0
 	JMP  _changeMenu
 
 ;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:3 WORDS
@@ -6169,8 +6047,17 @@ SUBOPT_0x3E:
 	LDI  R30,LOW(0)
 	RJMP SUBOPT_0x1F
 
-;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:4 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 3 TIMES, CODE SIZE REDUCTION:7 WORDS
 SUBOPT_0x3F:
+	LDI  R30,LOW(0)
+	LDI  R31,HIGH(0)
+	ST   -Y,R31
+	ST   -Y,R30
+	LDI  R26,LOW(0)
+	JMP  _changeMenu
+
+;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:4 WORDS
+SUBOPT_0x40:
 	CALL _lcd_putsf
 	LDI  R30,LOW(0)
 	STS  _isTestTombol,R30
@@ -6179,19 +6066,12 @@ SUBOPT_0x3F:
 	JMP  _delay
 
 ;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:1 WORDS
-SUBOPT_0x40:
+SUBOPT_0x41:
 	LDS  R30,_count_btn
 	LDS  R31,_count_btn+1
 	ST   -Y,R31
 	ST   -Y,R30
 	RET
-
-;OPTIMIZER ADDED SUBROUTINE, CALLED 2 TIMES, CODE SIZE REDUCTION:2 WORDS
-SUBOPT_0x41:
-	ST   -Y,R30
-	LDS  R26,_count_child_btn
-	LDS  R27,_count_child_btn+1
-	JMP  _changeMenu
 
 ;OPTIMIZER ADDED SUBROUTINE, CALLED 5 TIMES, CODE SIZE REDUCTION:13 WORDS
 SUBOPT_0x42:

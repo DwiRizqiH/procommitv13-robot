@@ -8,10 +8,9 @@ void map_select(int map_num);
 void sens_warna(void);
 // void tepuk_tangan(void);
 void test_capit(void);
-void changeMenu(int menuSelect, bool isSelect, int childMenuSelect) {
+void changeMenu(int menuSelect, bool isSelect) {
     lampu = 0;
     count_btn = menuSelect;
-    count_child_btn = childMenuSelect;
     if(!isSelect && !isChildSelect) {
         lcd_clear();
         lcd_gotoxy(0, 0);
@@ -35,12 +34,12 @@ void changeMenu(int menuSelect, bool isSelect, int childMenuSelect) {
             lcd_putsf("Sens Warna");
             break;
         case 3: // Map Select
-            if(isSelect || isChildSelect) { map_select(0); break; }
+            if(isSelect || isChildSelect) { map_select(map_biru); break; }
             lcd_gotoxy(0, 1);
             lcd_putsf("Map Biru");
             break;
         case 4: // Map Select
-            if(isSelect || isChildSelect) { map_select(1); break; }
+            if(isSelect || isChildSelect) { map_select(map_merah); break; }
             lcd_gotoxy(0, 1);
             lcd_putsf("Map Merah");
             break;
@@ -80,8 +79,7 @@ void runBot() {
 
         Program_Jalan();
         isChildSelect = false;
-        count_child_btn = 0;
-        changeMenu(0, false, 0);
+        changeMenu(0, false);
     }
 }
 
@@ -93,7 +91,7 @@ void calibration() {
     hit_tengah();
 
     isChildSelect = false;
-    changeMenu(0, false, 0);
+    changeMenu(0, false);
 }
 
 void map_select(int map_num) {
@@ -102,7 +100,7 @@ void map_select(int map_num) {
     mapMirror = map_num;
 
     isChildSelect = false;
-    changeMenu(0, false, 0);
+    changeMenu(0, false);
 }
 
 void test_motor()
@@ -137,7 +135,7 @@ void test_motor()
     lcd_gotoxy(0, 0);
     
     isChildSelect = false;
-    changeMenu(0, false, 0);
+    changeMenu(0, false);
 }
 
 
@@ -159,7 +157,7 @@ void test_tombol()
 
             isTestTombol = false;
             delay(50);
-            changeMenu(0, false, 0);
+            changeMenu(0, false);
         }
 
         if (t2 == 0)
@@ -199,7 +197,7 @@ void sens_warna()
     while (1)
     {
         bacawarna();
-        if (!isTestTombol) { lcd_clear(); capit_lepas; changeMenu(0, false, 0); break; }
+        if (!isTestTombol) { lcd_clear(); capit_lepas; changeMenu(0, false); break; }
         if ((t1 == 0))
         {
             lcd_gotoxy(0, 0);
@@ -260,42 +258,6 @@ void tepuk_tangan() {
         if(t1 == 0) break;
     }
 }
-
-// void tes_speed()
-// {
-//     if (t1 == 0)
-//     {
-//         kecepatanka--;
-//         delay_ms(10);
-//     }
-//     if (t2 == 0)
-//     {
-//         kecepatanka++;
-//         delay_ms(10);
-//     }
-//     if (t3 == 0)
-//     {
-//         kecepatanki--;
-//         delay_ms(10);
-//     }
-//     if (t4 == 0)
-//     {
-//         kecepatanki++;
-//         delay_ms(10);
-//     }
-
-//     lcd_gotoxy(0, 0);
-//     lcd_putsf("Kiri       Kanan");
-
-//     lcd_gotoxy(0, 1);
-//     sprintf(buff, "%d  ", kecepatanki);
-//     lcd_puts(buff);
-//     lcd_gotoxy(11, 1);
-//     sprintf(buff, "%d  ", kecepatanka);
-//     lcd_puts(buff);
-
-//     maju(kecepatanki, kecepatanka);
-// }
 
 void display_map() {
     cek_sensor();

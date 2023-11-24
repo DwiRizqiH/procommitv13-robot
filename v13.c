@@ -33,12 +33,12 @@
 #define         capit_lepas     pos_servo1=230;
 #define         capit_ambil     pos_servo1=237;
 
-// #define         gulung_on       pos_gulung=245;
-// #define         gulung_stop     pos_gulung=255;
+#define         merah           0
+#define         kuning          1
+#define         hijau           2
 
-#define         merah   0
-#define         kuning  1
-#define         hijau   2
+#define         map_biru        0
+#define         map_merah       1      
 
 
 // Alphanumeric LCD Module functions
@@ -66,7 +66,6 @@ int hitung = 0;
 unsigned int nadc7 = 0;
 char buff[33];
 int i, k;
-// unsigned char pos_servo1, pos_servo2, pos_gulung, a, pos_led1, pos_led2;
 unsigned char pos_servo1, pos_servo2, a;
 
 int count_btn = 0;
@@ -125,14 +124,6 @@ interrupt[TIM0_OVF] void timer0_ovf_isr(void)
     {
         servo2 = 1;
     }
-    // if (a <= pos_gulung)
-    // {
-    //     servo_gulung = 0;
-    // }
-    // else
-    // {
-    //     servo_gulung = 1;
-    // }
 }
 
 // Timer 0 output compare interrupt service routine
@@ -250,11 +241,10 @@ void main(void)
 #asm("sei")
     lengan_atas;
     capit_lepas;
-    // gulung_stop;
 
     /// mapMirror = 0 - map/lintasan bagian biru
     /// mapMirror = 1 - map/lintasan bagian merah
-    if(mapMirror != 0 && mapMirror != 1) mapMirror = 0;
+    if(mapMirror != map_biru && mapMirror != map_merah) mapMirror = map_biru;
 
     lcd_clear();
     lcd_gotoxy(0, 0);
@@ -269,113 +259,16 @@ void main(void)
             display_map();
         }
 
-        // lcd_gotoxy(0, 1);
-        // sprintf(buff, "button1 = %d  ", count_btn);
-        // lcd_puts(buff);
-
-        //bacawarna();
         if((t1 == 0)) {
-            // Program_Jalan();
 
             if(!isChildSelect) count_btn ++;
-            // if(isChildSelect) count_child_btn ++;
             if(count_btn >= 7) count_btn = 0;
             delay(10);
-            changeMenu(count_btn, false, count_child_btn);
-
-            // buttonhold[0] += 1;
-            // while((t1 == 0) && !isTestTombol && !isDelayClick1) {
-            //     isDelayClick1 = true;
-            //     delay(3);
-            //     if(buttonhold[0] > 20) {
-            //         isSelect = true;
-            //         changeMenu();
-            //     } else {
-            //         isSelect = false; isChildSelect = false;
-            //         changeMenu();
-            //         buttonhold[0] = 0;
-            //     }
-            //     isDelayClick1 = false; break;
-            // }
-            // lcd_gotoxy(0, 0);
-            // sprintf(buff, "button1 = %d  ", button1click);
+            changeMenu(count_btn, false);
         }
         if((t2 == 0)) {
-            changeMenu(count_btn, true, count_child_btn);
+            changeMenu(count_btn, true);
             delay(10);
         }
-            // lcd_puts(buff);
-        // } else if((t1 == 1)) {
-        //     buttonhold[0] = 0;
-        //     isDelayClick1 = false;
-        // }
-
-            // if ((count_btn==0) && (t2==0)){
-            //     lcd_clear();
-            //     lcd_gotoxy(0, 0);
-            //     lcd_putsf("menu 1");
-            // } else if((count_btn == 1) && (t2 == 0)) {
-            //     lcd_clear();
-            //     lcd_gotoxy(0, 0);
-            //     lcd_putsf("menu 2");
-            // } else if((count_btn == 2) && (t2 == 0)) {
-            //     lcd_clear();
-            //     lcd_gotoxy(0, 0);
-            //     lcd_putsf("menu 3");
-            // } else if((count_btn == 3) && (t2 == 0)) {
-            //     lcd_clear();
-            //     lcd_gotoxy(0, 0);
-            //     lcd_putsf("menu 4");
-            // } else if((count_btn == 4) && (t2 == 0)) {
-            //     lcd_clear();
-            //     lcd_gotoxy(0, 0);
-            //     lcd_putsf("menu 5");
-            // } else if((count_btn == 5) && (t2 == 0)) {
-            //     lcd_clear();
-            //     lcd_gotoxy(0, 0);
-            //     lcd_putsf("menu 6");
-            // } else if((count_btn == 6) && (t2 == 0)) {
-            //     lcd_clear();
-            //     lcd_gotoxy(0, 0);
-            //     lcd_putsf("menu 7");
-            // } else if((count_btn == 7) && (t2 == 0)) {
-            //     lcd_clear();
-            //     lcd_gotoxy(0, 0);
-            //     lcd_putsf("menu 8");
-            // } else if((count_btn == 8) && (t2 == 0)) {
-            //     lcd_clear();
-            //     lcd_gotoxy(0, 0);
-            //     lcd_putsf("menu 9");
-            // } else if((count_btn == 9) && (t2 == 0)) {
-            //     lcd_clear();
-            //     lcd_gotoxy(0, 0);
-            //     lcd_putsf("menu 10");
-            // } else if((count_btn == 10) && (t2 == 0)) {
-            //     lcd_clear();
-            //     lcd_gotoxy(0, 0);
-            // }
-
-        // if (    (t2 == 0) 
-        //         && !isTestTombol 
-        //         && (!isChildSelect && menuSelect == 0) // Jika Menu di Run Bot, jangan ubah page
-        //     ) {
-
-        //         // lengan_bawah;
-        //         // delay(50);
-        //     // menuSelect += 1;
-        //     // if(menuSelect >= 4) menuSelect = 0;
-        //     // changeMenu();
-
-        //     scan_garis(); 
-        //     delay(300);
-        //     scan_back();
-        //     delay(100);
-        //     hit_tengah();
-
-        //     // button1click = 0;
-        //     // lcd_gotoxy(0, 0);
-        //     // sprintf(buff, "button1 = %d  ", button1click);
-        //     // lcd_puts(buff);
-        // }
     }
 }

@@ -9,15 +9,13 @@ void bacawarna()
 int checkWarna() {
     int warna;
     nadc7 = read_adc(7);
-    if(nadc7>minMerah && nadc7<maxMerah){
+    if(nadc7 > minMerah && nadc7 < maxMerah){
         warna = 0;
-    }
-    else if(nadc7>minKuning && nadc7<maxKuning){
+    } else if(nadc7 > minKuning && nadc7 < maxKuning){
         warna = 1;
-    }
-    else if(nadc7>minHijau && nadc7<maxHijau){
+    } else if(nadc7 > minHijau && nadc7 < maxHijau){
         warna = 2;
-    }else{
+    } else {
         warna = 3;
     }
     return warna;

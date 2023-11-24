@@ -23,9 +23,6 @@ void cek_sensor()
 void display_sensor()
 {
     konvert_logic();
-    // logika();
-    // lcd_gotoxy(0, 0);
-    // lcd_putsf("CEK SENSOR  ");
     lcd_gotoxy(9, 0);
     sprintf(buff, "%d%d%d%d%d%d%d", sen[0] , sen[1] , sen[2], sen[3], sen[4], sen[5], sen[6]); 
     lcd_puts(buff);

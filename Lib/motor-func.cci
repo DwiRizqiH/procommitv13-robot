@@ -1,4 +1,4 @@
-VERSION:3 SOURCE_TIMESTAMP:57775379
+VERSION:3 SOURCE_TIMESTAMP:57788095
 NODE:F LEVEL:0 LINE:2 "maju(unsigned char ki,unsigned char ka)"
 NODE:F LEVEL:0 LINE:16 "mundur(unsigned char ki,unsigned char ka)"
 NODE:F LEVEL:0 LINE:30 "kanan(unsigned char ki,unsigned char ka)"
