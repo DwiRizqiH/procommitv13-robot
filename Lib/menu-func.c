@@ -4,7 +4,7 @@ void calibration(void);
 void Program_Jalan(void);
 void test_motor(void);
 void test_tombol(void);
-// void map_select(int childMenuSelect);
+void map_select(int map_num);
 void sens_warna(void);
 // void tepuk_tangan(void);
 void test_capit(void);
@@ -34,22 +34,27 @@ void changeMenu(int menuSelect, bool isSelect, int childMenuSelect) {
             lcd_gotoxy(0, 1);
             lcd_putsf("Sens Warna");
             break;
-        // case 2: // Map Select
-        //     if(isSelect || isChildSelect) { map_select(childMenuSelect); break; }
-        //     lcd_gotoxy(0, 1);
-        //     lcd_putsf("Map");
-        //     break;
-        case 3: // Test Motor
+        case 3: // Map Select
+            if(isSelect || isChildSelect) { map_select(0); break; }
+            lcd_gotoxy(0, 1);
+            lcd_putsf("Map Biru");
+            break;
+        case 4: // Map Select
+            if(isSelect || isChildSelect) { map_select(1); break; }
+            lcd_gotoxy(0, 1);
+            lcd_putsf("Map Merah");
+            break;
+        case 5: // Test Motor
             if(isSelect) { test_motor(); break; }
             lcd_gotoxy(0, 1);
             lcd_putsf("Motor");
             break;
-        case 4: // Test tombol
+        case 6: // Test tombol
             if(isSelect) { test_tombol(); break; }
             lcd_gotoxy(0, 1);
             lcd_putsf("Button");
             break;
-        case 5: // Tepuk tangan XD
+        case 7: // Test Capit
             if(isSelect) { test_capit(); break; }
             lcd_gotoxy(0, 1);
             lcd_putsf("Capit");
@@ -91,42 +96,13 @@ void calibration() {
     changeMenu(0, false, 0);
 }
 
-void map_select(int childMenuSelect) {
-    switch(childMenuSelect) {
-        case 0:
-            if(!isChildSelect) {
-                isChildSelect = true;
-                lcd_clear();
-                lcd_gotoxy(0, 0);
-                lcd_putsf("Map Biru");
-                lcd_gotoxy(0, 1);
-                lcd_putsf("Click 2 to select"); 
-            } else if(isChildSelect) {
-                mapMirror = 0;
-                count_child_btn = 0;
-                isChildSelect = false;
-                changeMenu(0, false, 0);
-            }
-            
-            break;
-        case 1:
-            if(!isChildSelect) {
-                isChildSelect = true;
-                lcd_clear();
-                lcd_gotoxy(0, 0);
-                lcd_putsf("Map Merah");
-                lcd_gotoxy(0, 1);
-                lcd_putsf("Click 2 to select"); 
-            } else if(isChildSelect) {
-                mapMirror = 1;
-                count_child_btn = 0;
-                isChildSelect = false;
-                changeMenu(0, false, 0);
-            }
-            break;
-        default:
-            break;
-    }
+void map_select(int map_num) {
+    // map_num = 0 - map/lintasan bagian biru, 1 - map/lintasan bagian merah
+    if(map_num != 0 && map_num != 1) map_num = 0;
+    mapMirror = map_num;
+
+    isChildSelect = false;
+    changeMenu(0, false, 0);
 }
 
 void test_motor()

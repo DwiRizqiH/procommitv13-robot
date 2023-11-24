@@ -1170,49 +1170,46 @@ _0x0:
 	.DB  0x74,0x69,0x6F,0x6E,0x0,0x52,0x75,0x6E
 	.DB  0x20,0x42,0x6F,0x74,0x0,0x53,0x65,0x6E
 	.DB  0x73,0x20,0x57,0x61,0x72,0x6E,0x61,0x0
-	.DB  0x4D,0x6F,0x74,0x6F,0x72,0x0,0x42,0x75
-	.DB  0x74,0x74,0x6F,0x6E,0x0,0x43,0x61,0x70
-	.DB  0x69,0x74,0x0,0x43,0x6C,0x69,0x63,0x6B
-	.DB  0x20,0x32,0x20,0x74,0x6F,0x20,0x73,0x74
-	.DB  0x61,0x72,0x74,0x0,0x52,0x75,0x6E,0x6E
-	.DB  0x69,0x6E,0x67,0x2E,0x2E,0x2E,0x0,0x4D
-	.DB  0x61,0x70,0x20,0x42,0x69,0x72,0x75,0x0
-	.DB  0x43,0x6C,0x69,0x63,0x6B,0x20,0x32,0x20
-	.DB  0x74,0x6F,0x20,0x73,0x65,0x6C,0x65,0x63
-	.DB  0x74,0x0,0x4D,0x61,0x70,0x20,0x4D,0x65
-	.DB  0x72,0x61,0x68,0x0,0x54,0x65,0x73,0x74
-	.DB  0x20,0x4D,0x6F,0x74,0x6F,0x72,0x0,0x2B
-	.DB  0x31,0x30,0x30,0x20,0x2B,0x31,0x30,0x30
-	.DB  0x0,0x2D,0x31,0x30,0x30,0x20,0x2D,0x31
-	.DB  0x30,0x30,0x0,0x2B,0x31,0x30,0x30,0x20
-	.DB  0x2D,0x31,0x30,0x30,0x0,0x2D,0x31,0x30
-	.DB  0x30,0x20,0x2B,0x31,0x30,0x30,0x0,0x43
-	.DB  0x6C,0x69,0x63,0x6B,0x20,0x31,0x20,0x74
-	.DB  0x6F,0x20,0x65,0x78,0x69,0x74,0x0,0x74
-	.DB  0x6F,0x6D,0x62,0x6F,0x6C,0x20,0x3D,0x20
-	.DB  0x31,0x20,0x20,0x20,0x20,0x20,0x0,0x74
-	.DB  0x6F,0x6D,0x62,0x6F,0x6C,0x20,0x3D,0x20
-	.DB  0x32,0x20,0x20,0x20,0x20,0x20,0x0,0x74
-	.DB  0x6F,0x6D,0x62,0x6F,0x6C,0x20,0x3D,0x20
-	.DB  0x33,0x20,0x20,0x20,0x20,0x20,0x0,0x74
-	.DB  0x6F,0x6D,0x62,0x6F,0x6C,0x20,0x3D,0x20
-	.DB  0x34,0x20,0x20,0x20,0x20,0x20,0x0,0x57
-	.DB  0x61,0x72,0x6E,0x61,0x3A,0x0,0x45,0x78
-	.DB  0x69,0x74,0x69,0x6E,0x67,0x2E,0x2E,0x2E
-	.DB  0x0,0x54,0x65,0x73,0x74,0x20,0x43,0x61
-	.DB  0x70,0x69,0x74,0x0,0x43,0x61,0x70,0x69
-	.DB  0x74,0x3A,0x20,0x3E,0x20,0x3C,0x0,0x43
-	.DB  0x61,0x70,0x69,0x74,0x3A,0x20,0x3C,0x20
-	.DB  0x3E,0x0,0x43,0x61,0x70,0x69,0x74,0x3A
-	.DB  0x20,0x5C,0x2F,0x0,0x43,0x61,0x70,0x69
-	.DB  0x74,0x3A,0x20,0x2F,0x5C,0x0,0x48,0x6F
-	.DB  0x6C,0x64,0x20,0x31,0x20,0x74,0x6F,0x20
-	.DB  0x65,0x78,0x69,0x74,0x0,0x58,0x44,0x0
-	.DB  0x20,0x20,0x20,0x20,0x20,0x4C,0x45,0x47
-	.DB  0x49,0x4F,0x4E,0x20,0x20,0x20,0x20,0x20
-	.DB  0x0,0x20,0x4D,0x41,0x4E,0x20,0x34,0x20
-	.DB  0x4A,0x4F,0x4D,0x42,0x41,0x4E,0x47,0x20
-	.DB  0x0
+	.DB  0x4D,0x61,0x70,0x20,0x42,0x69,0x72,0x75
+	.DB  0x0,0x4D,0x61,0x70,0x20,0x4D,0x65,0x72
+	.DB  0x61,0x68,0x0,0x4D,0x6F,0x74,0x6F,0x72
+	.DB  0x0,0x42,0x75,0x74,0x74,0x6F,0x6E,0x0
+	.DB  0x43,0x61,0x70,0x69,0x74,0x0,0x43,0x6C
+	.DB  0x69,0x63,0x6B,0x20,0x32,0x20,0x74,0x6F
+	.DB  0x20,0x73,0x74,0x61,0x72,0x74,0x0,0x52
+	.DB  0x75,0x6E,0x6E,0x69,0x6E,0x67,0x2E,0x2E
+	.DB  0x2E,0x0,0x54,0x65,0x73,0x74,0x20,0x4D
+	.DB  0x6F,0x74,0x6F,0x72,0x0,0x2B,0x31,0x30
+	.DB  0x30,0x20,0x2B,0x31,0x30,0x30,0x0,0x2D
+	.DB  0x31,0x30,0x30,0x20,0x2D,0x31,0x30,0x30
+	.DB  0x0,0x2B,0x31,0x30,0x30,0x20,0x2D,0x31
+	.DB  0x30,0x30,0x0,0x2D,0x31,0x30,0x30,0x20
+	.DB  0x2B,0x31,0x30,0x30,0x0,0x43,0x6C,0x69
+	.DB  0x63,0x6B,0x20,0x31,0x20,0x74,0x6F,0x20
+	.DB  0x65,0x78,0x69,0x74,0x0,0x74,0x6F,0x6D
+	.DB  0x62,0x6F,0x6C,0x20,0x3D,0x20,0x31,0x20
+	.DB  0x20,0x20,0x20,0x20,0x0,0x74,0x6F,0x6D
+	.DB  0x62,0x6F,0x6C,0x20,0x3D,0x20,0x32,0x20
+	.DB  0x20,0x20,0x20,0x20,0x0,0x74,0x6F,0x6D
+	.DB  0x62,0x6F,0x6C,0x20,0x3D,0x20,0x33,0x20
+	.DB  0x20,0x20,0x20,0x20,0x0,0x74,0x6F,0x6D
+	.DB  0x62,0x6F,0x6C,0x20,0x3D,0x20,0x34,0x20
+	.DB  0x20,0x20,0x20,0x20,0x0,0x57,0x61,0x72
+	.DB  0x6E,0x61,0x3A,0x0,0x45,0x78,0x69,0x74
+	.DB  0x69,0x6E,0x67,0x2E,0x2E,0x2E,0x0,0x54
+	.DB  0x65,0x73,0x74,0x20,0x43,0x61,0x70,0x69
+	.DB  0x74,0x0,0x43,0x61,0x70,0x69,0x74,0x3A
+	.DB  0x20,0x3E,0x20,0x3C,0x0,0x43,0x61,0x70
+	.DB  0x69,0x74,0x3A,0x20,0x3C,0x20,0x3E,0x0
+	.DB  0x43,0x61,0x70,0x69,0x74,0x3A,0x20,0x5C
+	.DB  0x2F,0x0,0x43,0x61,0x70,0x69,0x74,0x3A
+	.DB  0x20,0x2F,0x5C,0x0,0x48,0x6F,0x6C,0x64
+	.DB  0x20,0x31,0x20,0x74,0x6F,0x20,0x65,0x78
+	.DB  0x69,0x74,0x0,0x58,0x44,0x0,0x20,0x20
+	.DB  0x20,0x20,0x20,0x4C,0x45,0x47,0x49,0x4F
+	.DB  0x4E,0x20,0x20,0x20,0x20,0x20,0x0,0x20
+	.DB  0x4D,0x41,0x4E,0x20,0x34,0x20,0x4A,0x4F
+	.DB  0x4D,0x42,0x41,0x4E,0x47,0x20,0x0
 _0x2040060:
 	.DB  0x1
 _0x2040000:
@@ -1425,7 +1422,7 @@ _0x3:
 ;int count = 0;
 ;int second = 0;
 ;int positionD = 0;
-;int mapMirror = 0; // 0 - map/lintasan bagian biru, 1 - map/lintasan bagian mera ...
+;eeprom int mapMirror; // 0 - map/lintasan bagian biru, 1 - map/lintasan bagian m ...
 ;int maxHijau = 220;
 ;int maxKuning = 80;
 ;int maxMerah = 160;
@@ -1445,7 +1442,7 @@ _delay:
 	LD   R26,Y
 	LDD  R27,Y+1
 	CALL _delay_ms
-	RJMP _0x20C000E
+	RJMP _0x20C000F
 ; .FEND
 ;void lcd_kedip(int ulangi)
 ;for(i = 0; i < ulangi; i++)
@@ -1475,7 +1472,7 @@ _0x19:
 	ADD  R26,R8
 	ADC  R27,R9
 	LDI  R30,LOW(1)
-	RJMP _0x17D
+	RJMP _0x17C
 ;else if(read_adc(i) < tengah[i]) {
 _0x1B:
 	CALL SUBOPT_0x1
@@ -1488,7 +1485,7 @@ _0x1B:
 	ADD  R26,R8
 	ADC  R27,R9
 	LDI  R30,LOW(0)
-_0x17D:
+_0x17C:
 	ST   X,R30
 _0x1D:
 	MOVW R30,R8
@@ -1571,7 +1568,7 @@ _display_sensor:
 	CALL _sprintf
 	ADIW R28,32
 ;lcd_puts(buff);
-	RJMP _0x20C000D
+	RJMP _0x20C000E
 ; .FEND
 ;void scan_garis()
 _scan_garis:
@@ -1755,7 +1752,7 @@ _maju:
 	CBI  0x12,6
 ;PORTD.7 = 1;
 	SBI  0x12,7
-	RJMP _0x20C000E
+	RJMP _0x20C000F
 ; .FEND
 ;void mundur(unsigned char ki, unsigned char ka)
 _mundur:
@@ -1773,7 +1770,7 @@ _mundur:
 	SBI  0x12,6
 ;PORTD.7 = 0;
 	CBI  0x12,7
-	RJMP _0x20C000E
+	RJMP _0x20C000F
 ; .FEND
 ;void kanan(unsigned char ki, unsigned char ka)
 _kanan:
@@ -1791,7 +1788,7 @@ _kanan:
 	CBI  0x12,6
 ;PORTD.7 = 1;
 	SBI  0x12,7
-	RJMP _0x20C000E
+	RJMP _0x20C000F
 ; .FEND
 ;void kiri(unsigned char ki, unsigned char ka)
 _kiri:
@@ -1809,7 +1806,7 @@ _kiri:
 	SBI  0x12,6
 ;PORTD.7 = 0;
 	CBI  0x12,7
-	RJMP _0x20C000E
+	RJMP _0x20C000F
 ; .FEND
 ;void setMotor(int ki, int ka)
 _setMotor:
@@ -1872,7 +1869,7 @@ _0x65:
 	LDD  R31,Y+1
 	OUT  0x28+1,R31
 	OUT  0x28,R30
-	RJMP _0x20C000F
+	RJMP _0x20C0010
 ; .FEND
 ;void rem(int nilai_rem)
 _rem:
@@ -1896,7 +1893,7 @@ _rem:
 	LD   R26,Y
 	LDD  R27,Y+1
 	CALL _delay_ms
-	RJMP _0x20C000E
+	RJMP _0x20C000F
 ; .FEND
 ;void maju_delay(int kec, int lama)
 _maju_delay:
@@ -1912,7 +1909,7 @@ _maju_delay:
 	RCALL _maju
 ;delay(lama);
 	CALL SUBOPT_0x10
-	RJMP _0x20C000F
+	RJMP _0x20C0010
 ; .FEND
 ;void pilihSpeed(int kec)
 _pilihSpeed:
@@ -1952,7 +1949,7 @@ _pilihSpeed:
 	LDD  R31,Y+1
 	STS  _MAX_SPEED,R30
 	STS  _MAX_SPEED+1,R31
-	RJMP _0x20C000E
+	RJMP _0x20C000F
 ; .FEND
 ;void maju_cari_garis()
 ;maju(180, 182);
@@ -2006,7 +2003,7 @@ _scan:
 ;error = -6;
 	LDI  R30,LOW(65530)
 	LDI  R31,HIGH(65530)
-	RJMP _0x17E
+	RJMP _0x17D
 ;break; // DOMINAN KANAN
 ;case 0b00000011:
 _0x81:
@@ -2017,7 +2014,7 @@ _0x81:
 ;error = -5;
 	LDI  R30,LOW(65531)
 	LDI  R31,HIGH(65531)
-	RJMP _0x17E
+	RJMP _0x17D
 ;break;
 ;case 0b00000010:
 _0x82:
@@ -2028,7 +2025,7 @@ _0x82:
 ;error = -4;
 	LDI  R30,LOW(65532)
 	LDI  R31,HIGH(65532)
-	RJMP _0x17E
+	RJMP _0x17D
 ;break;
 ;case 0b00000110:
 _0x83:
@@ -2039,7 +2036,7 @@ _0x83:
 ;error = -3;
 	LDI  R30,LOW(65533)
 	LDI  R31,HIGH(65533)
-	RJMP _0x17E
+	RJMP _0x17D
 ;break;
 ;case 0b00000100:
 _0x84:
@@ -2050,7 +2047,7 @@ _0x84:
 ;error = -2;
 	LDI  R30,LOW(65534)
 	LDI  R31,HIGH(65534)
-	RJMP _0x17E
+	RJMP _0x17D
 ;break;
 ;case 0b00001100:
 _0x85:
@@ -2061,7 +2058,7 @@ _0x85:
 ;error = -1;
 	LDI  R30,LOW(65535)
 	LDI  R31,HIGH(65535)
-	RJMP _0x17E
+	RJMP _0x17D
 ;break;
 ;case 0b00001000:
 _0x86:
@@ -2084,7 +2081,7 @@ _0x87:
 ;error = 1;
 	LDI  R30,LOW(1)
 	LDI  R31,HIGH(1)
-	RJMP _0x17E
+	RJMP _0x17D
 ;break;
 ;case 0b00010000:
 _0x88:
@@ -2095,7 +2092,7 @@ _0x88:
 ;error = 2;
 	LDI  R30,LOW(2)
 	LDI  R31,HIGH(2)
-	RJMP _0x17E
+	RJMP _0x17D
 ;break;
 ;case 0b00110000:
 _0x89:
@@ -2106,7 +2103,7 @@ _0x89:
 ;error = 3;
 	LDI  R30,LOW(3)
 	LDI  R31,HIGH(3)
-	RJMP _0x17E
+	RJMP _0x17D
 ;break;
 ;case 0b00100000:
 _0x8A:
@@ -2117,7 +2114,7 @@ _0x8A:
 ;error = 4;
 	LDI  R30,LOW(4)
 	LDI  R31,HIGH(4)
-	RJMP _0x17E
+	RJMP _0x17D
 ;break;
 ;case 0b01100000:
 _0x8B:
@@ -2128,7 +2125,7 @@ _0x8B:
 ;error = 5;
 	LDI  R30,LOW(5)
 	LDI  R31,HIGH(5)
-	RJMP _0x17E
+	RJMP _0x17D
 ;break;
 ;case 0b01000000:
 _0x8C:
@@ -2139,7 +2136,7 @@ _0x8C:
 ;error = 6;
 	LDI  R30,LOW(6)
 	LDI  R31,HIGH(6)
-_0x17E:
+_0x17D:
 	STS  _error,R30
 	STS  _error+1,R31
 ;break; // DOMINAN KIRI
@@ -2292,7 +2289,7 @@ _0x94:
 ;hitung = 0;
 	CLR  R4
 	CLR  R5
-	RJMP _0x20C000F
+	RJMP _0x20C0010
 ; .FEND
 ;void scanTimer(int countGoal, int kec, int lama)
 _scanTimer:
@@ -2326,7 +2323,7 @@ _0xA0:
 _0xA2:
 ;rem(lama);
 	CALL SUBOPT_0x1A
-	RJMP _0x20C0010
+	RJMP _0x20C0011
 ; .FEND
 ;void scanKotak(int brpkali, int kec, int lama_rem) {
 _scanKotak:
@@ -2375,7 +2372,7 @@ _0xA5:
 ;hitung = 0;
 	CLR  R4
 	CLR  R5
-_0x20C0010:
+_0x20C0011:
 	ADIW R28,6
 	RET
 ; .FEND
@@ -2471,7 +2468,7 @@ _0xCE:
 ;rem(lama);
 	CALL SUBOPT_0x1A
 _0xD1:
-	RJMP _0x20C000F
+	RJMP _0x20C0010
 ; .FEND
 ;void belki2()
 ;cek_sensor();
@@ -2523,7 +2520,7 @@ _0xDC:
 ;rem(lama);
 	CALL SUBOPT_0x1A
 _0xDF:
-	RJMP _0x20C000F
+	RJMP _0x20C0010
 ; .FEND
 ;void belkacenter()
 ;cek_sensor();
@@ -2559,7 +2556,7 @@ _0xE7:
 	CALL SUBOPT_0x1E
 	RCALL _belki
 _0xE8:
-	RJMP _0x20C000F
+	RJMP _0x20C0010
 ; .FEND
 ;void belokKiri(int kec, int lama_rem) {
 _belokKiri:
@@ -2579,7 +2576,7 @@ _0xE9:
 	CALL SUBOPT_0x1E
 	RCALL _belka
 _0xEA:
-_0x20C000F:
+_0x20C0010:
 	ADIW R28,4
 	RET
 ; .FEND
@@ -2613,7 +2610,7 @@ _ambil:
 	MOV  R12,R30
 ;delay(lama);
 	CALL SUBOPT_0x10
-	RJMP _0x20C000E
+	RJMP _0x20C000F
 ; .FEND
 ;void taruh(int lama)
 _taruh:
@@ -2634,7 +2631,7 @@ _taruh:
 ;lengan_atas;
 	LDI  R30,LOW(234)
 	MOV  R12,R30
-_0x20C000E:
+_0x20C000F:
 	ADIW R28,2
 	RET
 ; .FEND
@@ -2677,7 +2674,7 @@ _bacawarna:
 	CALL _sprintf
 	ADIW R28,8
 ;lcd_puts(buff);
-_0x20C000D:
+_0x20C000E:
 	LDI  R26,LOW(_buff)
 	LDI  R27,HIGH(_buff)
 	CALL _lcd_puts
@@ -2791,7 +2788,7 @@ _fromBtoGreen:
 	CALL SUBOPT_0x28
 ;scanX(1, 90);
 	LDI  R26,LOW(90)
-	RJMP _0x20C000C
+	RJMP _0x20C000D
 ;scanTimer(33, 80, 50);
 ;ambil(20);
 ; .FEND
@@ -2843,7 +2840,7 @@ _fromBtoYellow:
 	ST   -Y,R30
 	LDI  R30,LOW(90)
 	LDI  R31,HIGH(90)
-	RJMP _0x20C000B
+	RJMP _0x20C000C
 ;ambil(20);
 ; .FEND
 ;void fromBtoRed() {
@@ -2885,7 +2882,7 @@ _fromBtoRed:
 	ST   -Y,R30
 	LDI  R30,LOW(95)
 	LDI  R31,HIGH(95)
-	RJMP _0x20C000B
+	RJMP _0x20C000C
 ;ambil(20);
 ; .FEND
 ;void fromCtoGreen() {
@@ -2945,7 +2942,7 @@ _fromCtoGreen:
 ;scanTimer(63, 80, 50);
 	LDI  R30,LOW(63)
 	LDI  R31,HIGH(63)
-	RJMP _0x20C000A
+	RJMP _0x20C000B
 ;ambil(20);
 ; .FEND
 ;void fromCtoYellow() {
@@ -2982,7 +2979,7 @@ _fromCtoYellow:
 ;scanX(2, 120);
 	LDI  R30,LOW(2)
 	LDI  R31,HIGH(2)
-	RJMP _0x20C0009
+	RJMP _0x20C000A
 ;scanX(1, 100);
 ;bawah_lepas();
 ;scanX(1, 100);
@@ -3015,7 +3012,7 @@ _fromCtoRed:
 ;scanX(1, 120);
 	LDI  R30,LOW(1)
 	LDI  R31,HIGH(1)
-_0x20C0009:
+_0x20C000A:
 	ST   -Y,R31
 	ST   -Y,R30
 	CALL SUBOPT_0x21
@@ -3026,18 +3023,18 @@ _0x20C0009:
 	CALL SUBOPT_0x28
 ;scanX(1, 100);
 	LDI  R26,LOW(100)
-_0x20C000C:
+_0x20C000D:
 	LDI  R27,0
 	RCALL _scanX
 ;scanTimer(33, 80, 50);
 	LDI  R30,LOW(33)
 	LDI  R31,HIGH(33)
-_0x20C000A:
+_0x20C000B:
 	ST   -Y,R31
 	ST   -Y,R30
 	LDI  R30,LOW(80)
 	LDI  R31,HIGH(80)
-_0x20C000B:
+_0x20C000C:
 	ST   -Y,R31
 	ST   -Y,R30
 	CALL SUBOPT_0x30
@@ -3059,7 +3056,7 @@ _fromAtoGreen:
 	CALL SUBOPT_0x22
 	CALL SUBOPT_0x21
 ;scanX(1, 120);
-	RJMP _0x20C0008
+	RJMP _0x20C0009
 ;scanX(1, 100);
 ;delay(15); scanKotak(1, 90, 5);
 ;taruh(20);
@@ -3077,14 +3074,14 @@ _fromAtoYellow:
 	CALL SUBOPT_0x24
 	LDI  R30,LOW(100)
 	LDI  R31,HIGH(100)
-	RJMP _0x20C0007
+	RJMP _0x20C0008
 ;taruh(20);
 ; .FEND
 ;void fromAtoRed() {
 _fromAtoRed:
 ; .FSTART _fromAtoRed
 ;scanX(1, 120);
-_0x20C0008:
+_0x20C0009:
 	LDI  R30,LOW(1)
 	LDI  R31,HIGH(1)
 	ST   -Y,R31
@@ -3097,7 +3094,7 @@ _0x20C0008:
 	CALL SUBOPT_0x24
 	LDI  R30,LOW(90)
 	LDI  R31,HIGH(90)
-_0x20C0007:
+_0x20C0008:
 	ST   -Y,R31
 	ST   -Y,R30
 	CALL SUBOPT_0x31
@@ -3130,7 +3127,7 @@ _0xF7:
 ;scanX(1, 100);
 	CALL SUBOPT_0x22
 	LDI  R26,LOW(100)
-	RJMP _0x17F
+	RJMP _0x17E
 ;scanX(1, 100);
 ;belokKanan(100, 20);
 ;} else if(positionD == 2) {
@@ -3149,7 +3146,7 @@ _0xF9:
 ;scanX(2, 120);
 	LDI  R30,LOW(2)
 	LDI  R31,HIGH(2)
-	RJMP _0x180
+	RJMP _0x17F
 ;scanX(1, 100);
 ;belokKanan(100, 20);
 ;} else if(positionD == 3) {
@@ -3168,11 +3165,11 @@ _0xFB:
 ;scanX(4, 120);
 	LDI  R30,LOW(4)
 	LDI  R31,HIGH(4)
-_0x180:
+_0x17F:
 	ST   -Y,R31
 	ST   -Y,R30
 	LDI  R26,LOW(120)
-_0x17F:
+_0x17E:
 	LDI  R27,0
 	RCALL _scanX
 ;scanX(1, 100);
@@ -3184,7 +3181,7 @@ _0x17F:
 ;vertikalLineD();
 _0xFD:
 _0xF8:
-	RJMP _0x20C0006
+	RJMP _0x20C0007
 ; .FEND
 ;void fromYellowAtoD() {
 _fromYellowAtoD:
@@ -3273,7 +3270,7 @@ _0x104:
 _0x103:
 _0x101:
 _0xFF:
-	RJMP _0x20C0006
+	RJMP _0x20C0007
 ; .FEND
 ;void fromRedAtoD() {
 _fromRedAtoD:
@@ -3358,7 +3355,7 @@ _0x10B:
 _0x10A:
 _0x108:
 _0x106:
-_0x20C0006:
+_0x20C0007:
 	RCALL _vertikalLineD
 	RET
 ; .FEND
@@ -3411,7 +3408,7 @@ _fromDto4:
 ;scanX(1, 100);
 	CALL SUBOPT_0x22
 	LDI  R26,LOW(100)
-	RJMP _0x181
+	RJMP _0x180
 ;} else if(positionD == 1) {
 _0x10C:
 	CALL SUBOPT_0x34
@@ -3426,7 +3423,7 @@ _0x10C:
 ;scanX(1, 120);
 	LDI  R30,LOW(1)
 	LDI  R31,HIGH(1)
-	RJMP _0x182
+	RJMP _0x181
 ;} else if(positionD == 2) {
 _0x10E:
 	CALL SUBOPT_0x34
@@ -3438,7 +3435,7 @@ _0x10E:
 ;scanX(4, 120);
 	LDI  R30,LOW(4)
 	LDI  R31,HIGH(4)
-	RJMP _0x182
+	RJMP _0x181
 ;} else if(positionD == 3) {
 _0x110:
 	CALL SUBOPT_0x34
@@ -3450,11 +3447,11 @@ _0x110:
 ;scanX(6, 120);
 	LDI  R30,LOW(6)
 	LDI  R31,HIGH(6)
-_0x182:
+_0x181:
 	ST   -Y,R31
 	ST   -Y,R30
 	LDI  R26,LOW(120)
-_0x181:
+_0x180:
 	LDI  R27,0
 	RCALL _scanX
 ;delay(15); scanKotak(1, 90, 5);
@@ -3566,7 +3563,7 @@ _0x115:
 ;} else {
 _0x117:
 ;fromBtoGreen();
-_0x183:
+_0x182:
 	RCALL _fromBtoGreen
 _0x116:
 _0x114:
@@ -3597,7 +3594,7 @@ _0x11B:
 ;} else {
 _0x11D:
 ;fromCtoGreen();
-_0x184:
+_0x183:
 	RCALL _fromCtoGreen
 _0x11C:
 _0x11A:
@@ -3631,7 +3628,7 @@ _0x121:
 ;} else {
 _0x123:
 ;fromAtoGreen();
-_0x185:
+_0x184:
 	RCALL _fromAtoGreen
 ;fromGreenAtoD();
 	RCALL _fromGreenAtoD
@@ -3652,6 +3649,7 @@ _0x120:
 ;void Program_Jalan(void);
 ;void test_motor(void);
 ;void test_tombol(void);
+;void map_select(int map_num);
 ;void sens_warna(void);
 ;void test_capit(void);
 ;void changeMenu(int menuSelect, bool isSelect, int childMenuSelect) {
@@ -3759,73 +3757,127 @@ _0x134:
 	CALL _lcd_putsf
 ;break;
 	RJMP _0x12C
-;case 3: // Test Motor
+;case 3: // Map Select
 _0x133:
 	CPI  R30,LOW(0x3)
 	LDI  R26,HIGH(0x3)
 	CPC  R31,R26
 	BRNE _0x135
-;if(isSelect) { test_motor(); break; }
+;if(isSelect || isChildSelect) { map_select(0); break; }
 	LDD  R30,Y+2
 	CPI  R30,0
+	BRNE _0x137
+	LDS  R30,_isChildSelect
+	CPI  R30,0
 	BREQ _0x136
-	RCALL _test_motor
+_0x137:
+	LDI  R26,LOW(0)
+	LDI  R27,0
+	RCALL _map_select
 	RJMP _0x12C
 ;lcd_gotoxy(0, 1);
 _0x136:
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x1F
-;lcd_putsf("Motor");
+;lcd_putsf("Map Biru");
 	__POINTW2FN _0x0,136
 	CALL _lcd_putsf
 ;break;
 	RJMP _0x12C
-;case 4: // Test tombol
+;case 4: // Map Select
 _0x135:
 	CPI  R30,LOW(0x4)
 	LDI  R26,HIGH(0x4)
 	CPC  R31,R26
-	BRNE _0x137
-;if(isSelect) { test_tombol(); break; }
+	BRNE _0x139
+;if(isSelect || isChildSelect) { map_select(1); break; }
 	LDD  R30,Y+2
 	CPI  R30,0
-	BREQ _0x138
-	RCALL _test_tombol
-	RJMP _0x12C
-;lcd_gotoxy(0, 1);
-_0x138:
-	LDI  R30,LOW(0)
-	CALL SUBOPT_0x1F
-;lcd_putsf("Button");
-	__POINTW2FN _0x0,142
-	CALL _lcd_putsf
-;break;
-	RJMP _0x12C
-;case 5: // Tepuk tangan XD
-_0x137:
-	CPI  R30,LOW(0x5)
-	LDI  R26,HIGH(0x5)
-	CPC  R31,R26
 	BRNE _0x13B
-;if(isSelect) { test_capit(); break; }
-	LDD  R30,Y+2
+	LDS  R30,_isChildSelect
 	CPI  R30,0
 	BREQ _0x13A
-	RCALL _test_capit
+_0x13B:
+	LDI  R26,LOW(1)
+	LDI  R27,0
+	RCALL _map_select
 	RJMP _0x12C
 ;lcd_gotoxy(0, 1);
 _0x13A:
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x1F
+;lcd_putsf("Map Merah");
+	__POINTW2FN _0x0,145
+	CALL _lcd_putsf
+;break;
+	RJMP _0x12C
+;case 5: // Test Motor
+_0x139:
+	CPI  R30,LOW(0x5)
+	LDI  R26,HIGH(0x5)
+	CPC  R31,R26
+	BRNE _0x13D
+;if(isSelect) { test_motor(); break; }
+	LDD  R30,Y+2
+	CPI  R30,0
+	BREQ _0x13E
+	RCALL _test_motor
+	RJMP _0x12C
+;lcd_gotoxy(0, 1);
+_0x13E:
+	LDI  R30,LOW(0)
+	CALL SUBOPT_0x1F
+;lcd_putsf("Motor");
+	__POINTW2FN _0x0,155
+	CALL _lcd_putsf
+;break;
+	RJMP _0x12C
+;case 6: // Test tombol
+_0x13D:
+	CPI  R30,LOW(0x6)
+	LDI  R26,HIGH(0x6)
+	CPC  R31,R26
+	BRNE _0x13F
+;if(isSelect) { test_tombol(); break; }
+	LDD  R30,Y+2
+	CPI  R30,0
+	BREQ _0x140
+	RCALL _test_tombol
+	RJMP _0x12C
+;lcd_gotoxy(0, 1);
+_0x140:
+	LDI  R30,LOW(0)
+	CALL SUBOPT_0x1F
+;lcd_putsf("Button");
+	__POINTW2FN _0x0,161
+	CALL _lcd_putsf
+;break;
+	RJMP _0x12C
+;case 7: // Test Capit
+_0x13F:
+	CPI  R30,LOW(0x7)
+	LDI  R26,HIGH(0x7)
+	CPC  R31,R26
+	BRNE _0x143
+;if(isSelect) { test_capit(); break; }
+	LDD  R30,Y+2
+	CPI  R30,0
+	BREQ _0x142
+	RCALL _test_capit
+	RJMP _0x12C
+;lcd_gotoxy(0, 1);
+_0x142:
+	LDI  R30,LOW(0)
+	CALL SUBOPT_0x1F
 ;lcd_putsf("Capit");
-	__POINTW2FN _0x0,149
+	__POINTW2FN _0x0,168
 	CALL _lcd_putsf
 ;break;
 ;default:
-_0x13B:
+_0x143:
 ;break;
 _0x12C:
-	RJMP _0x20C0004
+	RJMP _0x20C0005
 ; .FEND
 ;void runBot() {
 _runBot:
@@ -3833,7 +3885,7 @@ _runBot:
 ;if(!isChildSelect) {
 	LDS  R30,_isChildSelect
 	CPI  R30,0
-	BRNE _0x13C
+	BRNE _0x144
 ;lcd_clear();
 	CALL SUBOPT_0x38
 ;lcd_gotoxy(0, 0);
@@ -3842,24 +3894,24 @@ _runBot:
 	CALL SUBOPT_0x39
 ;lcd_gotoxy(0, 1);
 ;lcd_putsf("Click 2 to start");
-	__POINTW2FN _0x0,155
+	__POINTW2FN _0x0,174
 	CALL _lcd_putsf
 ;isChildSelect = true;
 	LDI  R30,LOW(1)
 	STS  _isChildSelect,R30
 ;} else if(isChildSelect) {
-	RJMP _0x13D
-_0x13C:
+	RJMP _0x145
+_0x144:
 	LDS  R30,_isChildSelect
 	CPI  R30,0
-	BREQ _0x13E
+	BREQ _0x146
 ;lcd_clear();
 	CALL _lcd_clear
 ;lcd_gotoxy(0, 1);
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x1F
 ;lcd_putsf("Running...");
-	__POINTW2FN _0x0,172
+	__POINTW2FN _0x0,191
 	CALL _lcd_putsf
 ;Program_Jalan();
 	RCALL _Program_Jalan
@@ -3871,8 +3923,8 @@ _0x13C:
 	STS  _count_child_btn+1,R30
 ;changeMenu(0, false, 0);
 	CALL SUBOPT_0x3A
-_0x13E:
-_0x13D:
+_0x146:
+_0x145:
 	RET
 ; .FEND
 ;void calibration() {
@@ -3891,42 +3943,42 @@ _calibration:
 ;hit_tengah();
 	RCALL _hit_tengah
 ;isChildSelect = false;
-	RJMP _0x20C0005
+	RJMP _0x20C0006
 ;changeMenu(0, false, 0);
 ; .FEND
-;void map_select(int childMenuSelect) {
-;switch(childMenuSelect) {
-;	childMenuSelect -> Y+0
-;case 0:
-;if(!isChildSelect) {
-;isChildSelect = true;
-;lcd_clear();
-;lcd_gotoxy(0, 0);
-;lcd_putsf("Map Biru");
-;lcd_gotoxy(0, 1);
-;lcd_putsf("Click 2 to select");
-;} else if(isChildSelect) {
-;mapMirror = 0;
-;count_child_btn = 0;
+;void map_select(int map_num) {
+_map_select:
+; .FSTART _map_select
+;if(map_num != 0 && map_num != 1) map_num = 0;
+	ST   -Y,R27
+	ST   -Y,R26
+;	map_num -> Y+0
+	LD   R26,Y
+	LDD  R27,Y+1
+	SBIW R26,0
+	BREQ _0x148
+	SBIW R26,1
+	BRNE _0x149
+_0x148:
+	RJMP _0x147
+_0x149:
+	LDI  R30,LOW(0)
+	STD  Y+0,R30
+	STD  Y+0+1,R30
+;mapMirror = map_num;
+_0x147:
+	LD   R30,Y
+	LDD  R31,Y+1
+	LDI  R26,LOW(_mapMirror)
+	LDI  R27,HIGH(_mapMirror)
+	CALL __EEPROMWRW
 ;isChildSelect = false;
+	LDI  R30,LOW(0)
+	STS  _isChildSelect,R30
 ;changeMenu(0, false, 0);
-;break;
-;case 1:
-;if(!isChildSelect) {
-;isChildSelect = true;
-;lcd_clear();
-;lcd_gotoxy(0, 0);
-;lcd_putsf("Map Merah");
-;lcd_gotoxy(0, 1);
-;lcd_putsf("Click 2 to select");
-;} else if(isChildSelect) {
-;mapMirror = 1;
-;count_child_btn = 0;
-;isChildSelect = false;
-;changeMenu(0, false, 0);
-;break;
-;default:
-;break;
+	CALL SUBOPT_0x3A
+	JMP  _0x20C0003
+; .FEND
 ;void test_motor()
 _test_motor:
 ; .FSTART _test_motor
@@ -3934,11 +3986,11 @@ _test_motor:
 	CALL SUBOPT_0x38
 ;lcd_gotoxy(0, 0);
 ;lcd_putsf("Test Motor");
-	__POINTW2FN _0x0,220
+	__POINTW2FN _0x0,202
 	CALL SUBOPT_0x39
 ;lcd_gotoxy(0, 1);
 ;lcd_putsf("+100 +100");
-	__POINTW2FN _0x0,231
+	__POINTW2FN _0x0,213
 	CALL _lcd_putsf
 ;setMotor(100, 100);
 	CALL SUBOPT_0x27
@@ -3948,14 +4000,14 @@ _test_motor:
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x1F
 ;lcd_putsf("-100 -100");
-	__POINTW2FN _0x0,241
+	__POINTW2FN _0x0,223
 	CALL SUBOPT_0x3D
 ;setMotor(-100, -100);
 	CALL SUBOPT_0x3E
 ;delay_ms(200);
 ;lcd_gotoxy(0, 1);
 ;lcd_putsf("+100 -100");
-	__POINTW2FN _0x0,251
+	__POINTW2FN _0x0,233
 	CALL _lcd_putsf
 ;setMotor(100, -100);
 	CALL SUBOPT_0x27
@@ -3963,7 +4015,7 @@ _test_motor:
 ;delay_ms(200);
 ;lcd_gotoxy(0, 1);
 ;lcd_putsf("-100 +100");
-	__POINTW2FN _0x0,261
+	__POINTW2FN _0x0,243
 	CALL SUBOPT_0x3D
 ;setMotor(-100, 100);
 	CALL SUBOPT_0x3C
@@ -3974,7 +4026,7 @@ _test_motor:
 	CALL SUBOPT_0x38
 ;lcd_gotoxy(0, 0);
 ;isChildSelect = false;
-_0x20C0005:
+_0x20C0006:
 	LDI  R30,LOW(0)
 	STS  _isChildSelect,R30
 ;changeMenu(0, false, 0);
@@ -3988,63 +4040,63 @@ _test_tombol:
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x1F
 ;lcd_putsf("Click 1 to exit");
-	__POINTW2FN _0x0,271
+	__POINTW2FN _0x0,253
 	CALL _lcd_putsf
 ;isTestTombol = true;
 	LDI  R30,LOW(1)
 	STS  _isTestTombol,R30
 ;while (1)
-_0x14B:
+_0x14A:
 ;if (!isTestTombol) break;
 	LDS  R30,_isTestTombol
 	CPI  R30,0
-	BREQ _0x14D
+	BREQ _0x14C
 ;if ((t1 == 0))
 	SBIC 0x13,0
-	RJMP _0x14F
+	RJMP _0x14E
 ;lcd_gotoxy(0, 0);
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x3
 ;lcd_putsf("tombol = 1     ");
-	__POINTW2FN _0x0,287
+	__POINTW2FN _0x0,269
 	CALL SUBOPT_0x3F
 ;isTestTombol = false;
 ;delay(50);
 ;changeMenu(0, false, 0);
 	CALL SUBOPT_0x3A
 ;if (t2 == 0)
-_0x14F:
+_0x14E:
 	SBIC 0x13,1
-	RJMP _0x150
+	RJMP _0x14F
 ;lcd_gotoxy(0, 0);
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x3
 ;lcd_putsf("tombol = 2     ");
-	__POINTW2FN _0x0,303
+	__POINTW2FN _0x0,285
 	CALL _lcd_putsf
 ;if (t3 == 0)
-_0x150:
+_0x14F:
 	SBIC 0x13,2
-	RJMP _0x151
+	RJMP _0x150
 ;lcd_gotoxy(0, 0);
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x3
 ;lcd_putsf("tombol = 3     ");
-	__POINTW2FN _0x0,319
+	__POINTW2FN _0x0,301
 	CALL _lcd_putsf
 ;if (t4 == 0)
-_0x151:
+_0x150:
 	SBIC 0x13,3
-	RJMP _0x152
+	RJMP _0x151
 ;lcd_gotoxy(0, 0);
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x3
 ;lcd_putsf("tombol = 4     ");
-	__POINTW2FN _0x0,335
+	__POINTW2FN _0x0,317
 	CALL _lcd_putsf
-_0x152:
-	RJMP _0x14B
-_0x14D:
+_0x151:
+	RJMP _0x14A
+_0x14C:
 	RET
 ; .FEND
 ;void sens_warna()
@@ -4058,7 +4110,7 @@ _sens_warna:
 	CALL SUBOPT_0x39
 ;lcd_gotoxy(0, 1);
 ;lcd_putsf("Warna:");
-	__POINTW2FN _0x0,351
+	__POINTW2FN _0x0,333
 	CALL _lcd_putsf
 ;isTestTombol = true;
 	LDI  R30,LOW(1)
@@ -4068,39 +4120,39 @@ _sens_warna:
 ;delay(200);
 	LDI  R26,LOW(200)
 	LDI  R27,0
-	RCALL _delay
+	CALL _delay
 ;ambil(20);
 	LDI  R26,LOW(20)
 	LDI  R27,0
 	RCALL _ambil
 ;while (1)
-_0x153:
+_0x152:
 ;bacawarna();
 	RCALL _bacawarna
 ;if (!isTestTombol) { lcd_clear(); capit_lepas; changeMenu(0, false, 0); break; }
 	LDS  R30,_isTestTombol
 	CPI  R30,0
-	BRNE _0x156
+	BRNE _0x155
 	CALL _lcd_clear
 	LDI  R30,LOW(230)
 	MOV  R13,R30
 	CALL SUBOPT_0x3A
-	RJMP _0x155
+	RJMP _0x154
 ;if ((t1 == 0))
-_0x156:
+_0x155:
 	SBIC 0x13,0
-	RJMP _0x157
+	RJMP _0x156
 ;lcd_gotoxy(0, 0);
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x3
 ;lcd_putsf("Exiting...");
-	__POINTW2FN _0x0,358
+	__POINTW2FN _0x0,340
 	CALL SUBOPT_0x3F
 ;isTestTombol = false;
 ;delay(50);
-_0x157:
-	RJMP _0x153
-_0x155:
+_0x156:
+	RJMP _0x152
+_0x154:
 	RET
 ; .FEND
 ;void test_capit()
@@ -4110,11 +4162,11 @@ _test_capit:
 	CALL SUBOPT_0x38
 ;lcd_gotoxy(0, 0);
 ;lcd_putsf("Test Capit");
-	__POINTW2FN _0x0,369
+	__POINTW2FN _0x0,351
 	CALL SUBOPT_0x39
 ;lcd_gotoxy(0, 1);
 ;lcd_putsf("Capit: > <");
-	__POINTW2FN _0x0,380
+	__POINTW2FN _0x0,362
 	CALL _lcd_putsf
 ;capit_ambil;
 	LDI  R30,LOW(237)
@@ -4127,7 +4179,7 @@ _test_capit:
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x1F
 ;lcd_putsf("Capit: < >");
-	__POINTW2FN _0x0,391
+	__POINTW2FN _0x0,373
 	CALL _lcd_putsf
 ;capit_lepas;
 	LDI  R30,LOW(230)
@@ -4138,7 +4190,7 @@ _test_capit:
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x1F
 ;lcd_putsf("Capit: \\/");
-	__POINTW2FN _0x0,402
+	__POINTW2FN _0x0,384
 	CALL _lcd_putsf
 ;lengan_bawah;
 	LDI  R30,LOW(240)
@@ -4149,7 +4201,7 @@ _test_capit:
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x1F
 ;lcd_putsf("Capit: /\\");
-	__POINTW2FN _0x0,412
+	__POINTW2FN _0x0,394
 	CALL _lcd_putsf
 ;lengan_atas;
 	LDI  R30,LOW(234)
@@ -4178,7 +4230,7 @@ _test_capit:
 _display_map:
 ; .FSTART _display_map
 ;cek_sensor();
-	RCALL _cek_sensor
+	CALL _cek_sensor
 ;lcd_gotoxy(7, 0);
 	LDI  R30,LOW(7)
 	CALL SUBOPT_0x3
@@ -4187,8 +4239,9 @@ _display_map:
 	__POINTW1FN _0x0,12
 	ST   -Y,R31
 	ST   -Y,R30
-	LDS  R30,_mapMirror
-	LDS  R31,_mapMirror+1
+	LDI  R26,LOW(_mapMirror)
+	LDI  R27,HIGH(_mapMirror)
+	CALL __EEPROMRDW
 	CALL SUBOPT_0xD
 	LDI  R24,4
 	CALL _sprintf
@@ -4228,35 +4281,35 @@ _timer0_ovf_isr:
 ; 0000 0070 if (a <= pos_servo1)
 	LDS  R26,_a
 	CP   R13,R26
-	BRLO _0x163
+	BRLO _0x162
 ; 0000 0071 {
 ; 0000 0072 servo1 = 0;
 	CBI  0x15,6
 ; 0000 0073 }
 ; 0000 0074 else
-	RJMP _0x166
-_0x163:
+	RJMP _0x165
+_0x162:
 ; 0000 0075 {
 ; 0000 0076 servo1 = 1;
 	SBI  0x15,6
 ; 0000 0077 }
-_0x166:
+_0x165:
 ; 0000 0078 if (a <= pos_servo2)
 	LDS  R26,_a
 	CP   R12,R26
-	BRLO _0x169
+	BRLO _0x168
 ; 0000 0079 {
 ; 0000 007A servo2 = 0;
 	CBI  0x15,7
 ; 0000 007B }
 ; 0000 007C else
-	RJMP _0x16C
-_0x169:
+	RJMP _0x16B
+_0x168:
 ; 0000 007D {
 ; 0000 007E servo2 = 1;
 	SBI  0x15,7
 ; 0000 007F }
-_0x16C:
+_0x16B:
 ; 0000 0080 // if (a <= pos_gulung)
 ; 0000 0081 // {
 ; 0000 0082 //     servo_gulung = 0;
@@ -4450,11 +4503,11 @@ _main:
 	LDI  R30,LOW(0)
 	CALL SUBOPT_0x3
 ; 0000 00F2 lcd_putsf("     LEGION     ");
-	__POINTW2FN _0x0,440
+	__POINTW2FN _0x0,422
 	CALL SUBOPT_0x39
 ; 0000 00F3 lcd_gotoxy(0, 1);
 ; 0000 00F4 lcd_putsf(" MAN 4 JOMBANG ");
-	__POINTW2FN _0x0,457
+	__POINTW2FN _0x0,439
 	CALL _lcd_putsf
 ; 0000 00F5 delay_ms(50);
 	LDI  R26,LOW(50)
@@ -4478,21 +4531,26 @@ _main:
 ; 0000 00FF /// mapMirror = 0 - map/lintasan bagian biru
 ; 0000 0100 /// mapMirror = 1 - map/lintasan bagian merah
 ; 0000 0101 if(mapMirror != 0 && mapMirror != 1) mapMirror = 0;
-	LDS  R26,_mapMirror
-	LDS  R27,_mapMirror+1
-	SBIW R26,0
-	BREQ _0x172
-	SBIW R26,1
-	BRNE _0x173
+	LDI  R26,LOW(_mapMirror)
+	LDI  R27,HIGH(_mapMirror)
+	CALL __EEPROMRDW
+	SBIW R30,0
+	BREQ _0x171
+	CPI  R30,LOW(0x1)
+	LDI  R26,HIGH(0x1)
+	CPC  R31,R26
+	BRNE _0x172
+_0x171:
+	RJMP _0x170
 _0x172:
-	RJMP _0x171
-_0x173:
+	LDI  R26,LOW(_mapMirror)
+	LDI  R27,HIGH(_mapMirror)
 	LDI  R30,LOW(0)
-	STS  _mapMirror,R30
-	STS  _mapMirror+1,R30
+	LDI  R31,HIGH(0)
+	CALL __EEPROMWRW
 ; 0000 0102 
 ; 0000 0103 lcd_clear();
-_0x171:
+_0x170:
 	CALL SUBOPT_0x38
 ; 0000 0104 lcd_gotoxy(0, 0);
 ; 0000 0105 lcd_putsf("Menu");
@@ -4504,11 +4562,11 @@ _0x171:
 	CALL _lcd_putsf
 ; 0000 0108 
 ; 0000 0109 while(1) {
-_0x174:
+_0x173:
 ; 0000 010A if(!isChildSelect) {
 	LDS  R30,_isChildSelect
 	CPI  R30,0
-	BRNE _0x177
+	BRNE _0x176
 ; 0000 010B display_sensor();
 	CALL _display_sensor
 ; 0000 010C bacawarna();
@@ -4523,30 +4581,30 @@ _0x174:
 ; 0000 0113 
 ; 0000 0114 //bacawarna();
 ; 0000 0115 if((t1 == 0)) {
-_0x177:
+_0x176:
 	SBIC 0x13,0
-	RJMP _0x178
+	RJMP _0x177
 ; 0000 0116 // Program_Jalan();
 ; 0000 0117 
 ; 0000 0118 if(!isChildSelect) count_btn ++;
 	LDS  R30,_isChildSelect
 	CPI  R30,0
-	BRNE _0x179
+	BRNE _0x178
 	LDI  R26,LOW(_count_btn)
 	LDI  R27,HIGH(_count_btn)
 	CALL SUBOPT_0x19
 ; 0000 0119 // if(isChildSelect) count_child_btn ++;
-; 0000 011A if(count_btn >= 6) count_btn = 0;
-_0x179:
+; 0000 011A if(count_btn >= 7) count_btn = 0;
+_0x178:
 	LDS  R26,_count_btn
 	LDS  R27,_count_btn+1
-	SBIW R26,6
-	BRLT _0x17A
+	SBIW R26,7
+	BRLT _0x179
 	LDI  R30,LOW(0)
 	STS  _count_btn,R30
 	STS  _count_btn+1,R30
 ; 0000 011B delay(10);
-_0x17A:
+_0x179:
 	LDI  R26,LOW(10)
 	LDI  R27,0
 	CALL _delay
@@ -4573,9 +4631,9 @@ _0x17A:
 ; 0000 012D // sprintf(buff, "button1 = %d  ", button1click);
 ; 0000 012E }
 ; 0000 012F if((t2 == 0)) {
-_0x178:
+_0x177:
 	SBIC 0x13,1
-	RJMP _0x17B
+	RJMP _0x17A
 ; 0000 0130 changeMenu(count_btn, true, count_child_btn);
 	CALL SUBOPT_0x40
 	LDI  R30,LOW(1)
@@ -4659,11 +4717,11 @@ _0x178:
 ; 0000 017A //     // lcd_puts(buff);
 ; 0000 017B // }
 ; 0000 017C }
-_0x17B:
-	RJMP _0x174
+_0x17A:
+	RJMP _0x173
 ; 0000 017D }
-_0x17C:
-	RJMP _0x17C
+_0x17B:
+	RJMP _0x17B
 ; .FEND
 	#ifndef __SLEEP_DEFINED__
 	#define __SLEEP_DEFINED__
@@ -4730,7 +4788,7 @@ _0x2000010:
 _0x2000015:
 	LDD  R17,Y+1
 	LDD  R16,Y+0
-_0x20C0004:
+_0x20C0005:
 	ADIW R28,5
 	RET
 ; .FEND
@@ -5118,7 +5176,7 @@ _sprintf:
 	BRNE _0x2000072
 	LDI  R30,LOW(65535)
 	LDI  R31,HIGH(65535)
-	RJMP _0x20C0003
+	RJMP _0x20C0004
 _0x2000072:
 	MOVW R26,R28
 	ADIW R26,6
@@ -5156,7 +5214,7 @@ _0x2000072:
 	LDI  R30,LOW(0)
 	ST   X,R30
 	MOVW R30,R18
-_0x20C0003:
+_0x20C0004:
 	CALL __LOADLOCR4
 	ADIW R28,10
 	POP  R15
@@ -5334,6 +5392,7 @@ _lcd_gotoxy:
 	STS  __lcd_x,R30
 	LD   R30,Y
 	STS  __lcd_y,R30
+_0x20C0003:
 	ADIW R28,2
 	RET
 ; .FEND
@@ -5553,8 +5612,12 @@ _second:
 	.BYTE 0x2
 _positionD:
 	.BYTE 0x2
+
+	.ESEG
 _mapMirror:
 	.BYTE 0x2
+
+	.DSEG
 _maxHijau:
 	.BYTE 0x2
 _maxKuning:
@@ -5826,8 +5889,9 @@ SUBOPT_0x1C:
 SUBOPT_0x1D:
 	ST   -Y,R27
 	ST   -Y,R26
-	LDS  R30,_mapMirror
-	LDS  R31,_mapMirror+1
+	LDI  R26,LOW(_mapMirror)
+	LDI  R27,HIGH(_mapMirror)
+	CALL __EEPROMRDW
 	SBIW R30,0
 	RET
 
@@ -5841,7 +5905,7 @@ SUBOPT_0x1E:
 	LDD  R27,Y+2+1
 	RET
 
-;OPTIMIZER ADDED SUBROUTINE, CALLED 21 TIMES, CODE SIZE REDUCTION:37 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 23 TIMES, CODE SIZE REDUCTION:41 WORDS
 SUBOPT_0x1F:
 	ST   -Y,R30
 	LDI  R26,LOW(1)
@@ -6059,7 +6123,7 @@ SUBOPT_0x39:
 	LDI  R30,LOW(0)
 	RJMP SUBOPT_0x1F
 
-;OPTIMIZER ADDED SUBROUTINE, CALLED 4 TIMES, CODE SIZE REDUCTION:21 WORDS
+;OPTIMIZER ADDED SUBROUTINE, CALLED 5 TIMES, CODE SIZE REDUCTION:29 WORDS
 SUBOPT_0x3A:
 	LDI  R30,LOW(0)
 	LDI  R31,HIGH(0)
