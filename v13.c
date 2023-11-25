@@ -262,7 +262,7 @@ void main(void)
         if((t1 == 0)) {
 
             if(!isChildSelect) count_btn ++;
-            if(count_btn >= 7) count_btn = 0;
+            if(count_btn >= 8) count_btn = 0;
             delay(10);
             changeMenu(count_btn, false);
         }

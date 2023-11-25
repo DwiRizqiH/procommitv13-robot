@@ -3,7 +3,7 @@ eeprom int mapMirror; // 0 - map/lintasan bagian biru, 1 - map/lintasan bagian m
 
 int maxHijau = 220;
 int maxKuning = 80;
-int maxMerah = 160;
+int maxMerah = 165;
 
 int minHijau = 170;
 int minKuning = 5;

@@ -4,7 +4,7 @@ void balikKiri(void);
 // from Point B
 void fromBtoGreen()
 {
-    scanX(2, 120);
+    scanX(2, 100);
     scanX(1, 100);
     // scanTimer(45, 80, 50);
     delay(15); scanKotak(1, 90, 5);
@@ -18,7 +18,7 @@ void fromBtoGreen()
     scanX(2, 100);
     belokKiri(100, 20);
 
-    scanX(2, 120);
+    scanX(2, 100);
     bawah_lepas();
     scanX(1, 90);
     scanTimer(33, 80, 50);
@@ -31,7 +31,7 @@ void fromBtoYellow()
     scanX(1, 100);
     belokKanan(100, 20);
 
-    scanX(2, 120);
+    scanX(2, 100);
     scanX(1, 100);
     // scanTimer(40, 95, 50);
     delay(15); scanKotak(1, 90, 5);
@@ -43,7 +43,7 @@ void fromBtoYellow()
     belokKiri(100, 5); belokKiri(100, 20);
 
     scanX(1, 100);
-    scanX(3, 120);
+    scanX(3, 100);
     scanX(1, 100);
     belokKiri(100, 20);
 
@@ -59,7 +59,7 @@ void fromBtoRed() {
     scanX(1, 100);
     belokKiri(100, 20);
 
-    scanX(2, 120);
+    scanX(2, 100);
     scanX(1, 100);
     // scanTimer(37, 95, 50);
     delay(15); scanKotak(1, 90, 5);
@@ -88,7 +88,7 @@ void fromCtoGreen() {
     belokKiri(100, 20);
 
     scanX(1, 100);
-    scanX(2, 120);
+    scanX(2, 100);
     scanX(2, 100);
     // scanTimer(37, 95, 50);
     delay(15); scanKotak(1, 90, 5);
@@ -96,21 +96,21 @@ void fromCtoGreen() {
     taruh(20);
 
     // to Point A
-    mundur(100, 100); delay(38);
+    mundur(100, 100); delay(35);
     belokKanan(100, 5); belokKanan(100, 20);
 
     scanX(1, 100);
     scanX(2, 100);
     belokKanan(100, 20);
 
-    scanX(2, 120);
+    scanX(2, 100);
     scanX(1, 100);
     scanX(1, 100);
 
     belokKanan(90, 10);
     scanX(1, 100);
     bawah_lepas();
-    scanTimer(63, 80, 50);
+    scanTimer(55, 80, 50);
 
     // scanKotak(1, 90, 5);
 
@@ -130,12 +130,12 @@ void fromCtoYellow() {
     mundur(100, 100); delay(38);
     belokKanan(100, 20);
 
-    scanX(2, 120);
+    scanX(2, 100);
     scanX(1, 100);
     scanX(1, 100);
     belokKanan(100, 20);
 
-    scanX(2, 120);
+    scanX(2, 100);
     scanX(1, 100);
     bawah_lepas();
     scanX(1, 100);
@@ -149,7 +149,7 @@ void fromCtoRed() {
     belokKanan(100, 5); belokKanan(100, 20);
 
     scanX(1, 90);
-    scanX(1, 120);
+    scanX(1, 100);
     scanX(1, 100);
     // scanTimer(45, 80, 50);
     delay(15); scanKotak(1, 90, 5);
@@ -160,7 +160,7 @@ void fromCtoRed() {
     mundur(100, 100); delay(38);
     belokKanan(100, 20);
 
-    scanX(1, 120);
+    scanX(1, 100);
     scanX(1, 100);
     bawah_lepas();
     scanX(1, 100);
@@ -176,8 +176,8 @@ void fromAtoGreen() {
     belokKanan(100, 5); belokKanan(100, 20);
 
     scanX(1, 100);
-    scanX(1, 120);
-    scanX(1, 120);
+    scanX(1, 100);
+    scanX(1, 100);
     scanX(1, 100);
     // scanTimer(35, 95, 50);
     delay(15); scanKotak(1, 90, 5);
@@ -195,7 +195,7 @@ void fromAtoYellow() {
     taruh(20);
 }
 void fromAtoRed() {
-    scanX(1, 120);
+    scanX(1, 100);
     scanX(1, 100);
 
     // scanTimer(35, 95, 50);
@@ -208,7 +208,7 @@ void vertikalLineD(void);
 void fromGreenAtoD() {
     if(positionD == 0) {
         mundur(100, 100); delay(38);
-        belokKiri(100, 20);
+        belokKiri(80, 20);
     } else if(positionD == 1) {
         mundur(100, 100); delay(38);
         belokKanan(100, 5); belokKanan(100, 20);
@@ -221,7 +221,7 @@ void fromGreenAtoD() {
         belokKanan(100, 5); belokKanan(100, 20);
 
         scanX(1, 100);
-        scanX(2, 120);
+        scanX(2, 100);
         scanX(1, 100);
         belokKanan(100, 20);
     } else if(positionD == 3) {
@@ -229,7 +229,7 @@ void fromGreenAtoD() {
         belokKanan(100, 5); belokKanan(100, 20);
 
         scanX(1, 100);
-        scanX(4, 120);
+        scanX(4, 100);
         scanX(1, 100);
         belokKanan(100, 20);
     }
@@ -242,7 +242,7 @@ void fromYellowAtoD() {
         belokKiri(80, 20);
 
         scanX(1, 100);
-        scanX(3, 120);
+        scanX(3, 100);
         scanX(1, 100);
         belokKiri(100, 20);
     } else if(positionD == 1) {
@@ -250,7 +250,7 @@ void fromYellowAtoD() {
         belokKiri(100, 20);
 
         scanX(1, 100);
-        scanX(1, 120);
+        scanX(1, 100);
         scanX(1, 100);
         belokKiri(100, 20);
     } else if(positionD == 2) {
@@ -275,7 +275,7 @@ void fromRedAtoD() {
         belokKanan(100, 5); belokKanan(100, 20);
 
         scanX(1, 100);
-        scanX(4, 120);
+        scanX(4, 100);
         scanX(1, 100);
         belokKiri(100, 20);
     } else if(positionD == 1) {
@@ -283,7 +283,7 @@ void fromRedAtoD() {
         belokKanan(100, 5); belokKanan(100, 20);
 
         scanX(1, 100);
-        scanX(2, 120);
+        scanX(2, 100);
         scanX(1, 100);
         belokKiri(100, 20);
     } else if(positionD == 2) {
@@ -306,7 +306,7 @@ void fromRedAtoD() {
 // Jalur Vertical to Point D
 void fromDto4(void);
 void vertikalLineD() {
-    scanX(3, 120);
+    scanX(3, 100);
     scanX(1, 100);
     bawah_lepas();
     scanX(1, 100);
@@ -326,28 +326,57 @@ void fromDto4() {
 
     // to 4
     scanX(1, 90);
-    scanX(1, 120);
+    scanX(1, 100);
     belokKiri(100, 20);
 
     if(positionD == 0) {
         scanX(1, 100);
     } else if(positionD == 1) {
         scanX(1, 100);
-        scanX(1, 120);
-        scanX(1, 120);
+        scanX(1, 100);
+        scanX(1, 100);
     } else if(positionD == 2) {
         scanX(1, 100);
-        scanX(4, 120);
+        scanX(4, 100);
     } else if(positionD == 3) {
         scanX(1, 100);
-        scanX(6, 120);
+        scanX(6, 100);
     }
 
     // scanTimer(75, 95, 50);
     delay(15); scanKotak(1, 90, 5);
     taruh(20);
+    positionD++;
 
-    returnHome();
+    if(positionD == 4) {
+        returnHome();
+    } else {
+        mundur(100, 100); delay(20);
+        belokKanan(100, 20); 
+        scanX(1, 100);
+
+        if(positionD == 0) {
+            scanX(1, 100);
+        } else if(positionD == 1) {
+            scanX(1, 100);
+            scanX(1, 100);
+            scanX(1, 100);
+        } else if(positionD == 2) {
+            scanX(1, 100);
+            scanX(4, 100);
+        } else if(positionD == 3) {
+            scanX(1, 100);
+            scanX(6, 100);
+        }
+        belokKanan(100, 20);
+        scanX(1, 90);
+        bawah_lepas();
+        scanX(1, 100);
+        delay(15); scanKotak(1, 90, 5);
+        ambil(20);
+
+        fromDto4();
+    }
 }
 
 // Return Home
@@ -356,11 +385,11 @@ void returnHome() {
     belokKanan(100, 20);
 
     scanX(1, 100);
-    scanX(3, 120);
+    scanX(3, 100);
     scanX(1, 100);
     belokKanan(100, 20);
 
-    scanX(1, 120);
+    scanX(1, 100);
     scanX(1, 100);
     
     // scanTimer(35, 95, 50);
@@ -379,7 +408,7 @@ void Program_Jalan()
     maju_delay(80, 60);
       
       // to Point B
-    scanX(2, 120);
+    scanX(2, 100);
     bawah_lepas();
     scanX(1, 100);
     scanTimer(28, 80, 50);
