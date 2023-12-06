@@ -4,55 +4,97 @@ void balikKiri(void);
 // from Point B
 void fromBtoGreen()
 {
-    scanX(2, 100);
-    scanX(1, 100);
-    // scanTimer(45, 80, 50);
-    delay(15); scanKotak(1, 90, 5);
-
-    taruh(20);
-
-    // to Point C
-    mundur(100, 100); delay(38);
-    belokKiri(100, 20);
-    
-    scanX(2, 100);
-    belokKiri(100, 20);
-
-    scanX(2, 100);
-    bawah_lepas();
-    scanX(1, 90);
-    scanTimer(33, 80, 50);
-    // scanKotak(1, 90, 5);
-
-    ambil(20);
-}
-void fromBtoYellow() 
-{
-    scanX(1, 100);
-    belokKanan(100, 20);
-
-    scanX(2, 100);
-    scanX(1, 100);
-    // scanTimer(40, 95, 50);
-    delay(15); scanKotak(1, 90, 5);
-
-    taruh(20);
-
-    // to Point C
     mundur(100, 100); delay(38);
     belokKiri(100, 5); belokKiri(100, 20);
 
     scanX(1, 100);
+    belokKiri(100, 20);
+
     scanX(3, 100);
+    delay(15); scanKotak(1, 90, 5);
+
+    taruh(20);
+
+    mundur(100, 100); delay(38);
+    belokKiri(100, 5);
+    scanX(1, 100);
+    belokKiri(100, 5);
+
+    scanX(6, 100);
+    belokKiri(100, 20);
+    scanX(1, 100);
+    bawah_lepas();
+    belokKiri(100, 20);
+    scanTimer(40, 80, 50);
+
+    ambil(20);
+
+
+    // scanX(2, 100);
+    // scanX(1, 100);
+    // // scanTimer(45, 80, 50);
+    // delay(15); scanKotak(1, 90, 5);
+
+    // taruh(20);
+
+    // // to Point C
+    // mundur(100, 100); delay(38);
+    // belokKiri(100, 20);
+    
+    // scanX(2, 100);
+    // belokKiri(100, 20);
+
+    // scanX(2, 100);
+    // bawah_lepas();
+    // scanX(1, 90);
+    // scanTimer(33, 80, 50);
+    // // scanKotak(1, 90, 5);
+
+    // ambil(20);
+}
+void fromBtoYellow() 
+{
     scanX(1, 100);
     belokKiri(100, 20);
 
+    scanX(3, 100);
+    belokKiri(100, 20);
+
+    scanX(2, 100);
+    belokKanan(100, 20);
+    delay(15); scanKotak(1, 100, 5);
+
+    taruh(20);
+
+    mundur(100, 100); delay(38);
     bawah_lepas();
-    scanX(1, 100);
-    scanTimer(50, 90, 50);
-    // scanKotak(1, 90, 5);
+    belokKiri(100, 5); belokKiri(100, 20);
+    scanTimer(25, 90, 50);
 
     ambil(20);
+
+    // scanX(2, 100);
+    // scanX(1, 100);
+    // // scanTimer(40, 95, 50);
+    // delay(15); scanKotak(1, 90, 5);
+
+    // taruh(20);
+
+    // // to Point C
+    // mundur(100, 100); delay(38);
+    // belokKiri(100, 5); belokKiri(100, 20);
+
+    // scanX(1, 100);
+    // scanX(3, 100);
+    // scanX(1, 100);
+    // belokKiri(100, 20);
+
+    // bawah_lepas();
+    // scanX(1, 100);
+    // scanTimer(50, 90, 50);
+    // // scanKotak(1, 90, 5);
+
+    // ambil(20);
     
 }
 void fromBtoRed() {
@@ -60,61 +102,88 @@ void fromBtoRed() {
     belokKiri(100, 20);
 
     scanX(2, 100);
-    scanX(1, 100);
-    // scanTimer(37, 95, 50);
-    delay(15); scanKotak(1, 90, 5);
+    belokKanan(100, 20);
+
+    scanX(2, 100);
+    delay(15); scanKotak(1, 100, 5);
 
     taruh(20);
 
-    // to Point C
     mundur(100, 100); delay(38);
-    belokKanan(100, 5); belokKanan(100, 20);
-
+    belokKiri(100, 5);
     scanX(1, 100);
-    belokKanan(100, 20);
 
+    belokKiri(100, 20);
+    scanX(4, 100);
     bawah_lepas();
-    scanX(1, 100);
-    scanTimer(43, 95, 50);
+    belokKiri(100, 20);
+    scanTimer(33, 90, 50);
 
-    // scanKotak(1, 90, 5);
     ambil(20);
+    // scanX(1, 100);
+    // belokKiri(100, 20);
+
+    // scanX(2, 100);
+    // scanX(1, 100);
+    // // scanTimer(37, 95, 50);
+    // delay(15); scanKotak(1, 90, 5);
+
+    // taruh(20);
+
+    // // to Point C
+    // mundur(100, 100); delay(38);
+    // belokKanan(100, 5); belokKanan(100, 20);
+
+    // scanX(1, 100);
+    // belokKanan(100, 20);
+
+    // bawah_lepas();
+    // scanX(1, 100);
+    // scanTimer(43, 95, 50);
+
+    // // scanKotak(1, 90, 5);
+    // ambil(20);
 }
 
 
 // From Point C
 void fromCtoGreen() {
     scanX(1, 100);
+    scanX(4, 100);
     belokKiri(100, 20);
 
-    scanX(1, 100);
-    scanX(2, 100);
-    scanX(2, 100);
-    // scanTimer(37, 95, 50);
-    delay(15); scanKotak(1, 90, 5);
+    scanX(3, 100);
+    // scanX(1, 100);
+    // belokKiri(100, 20);
 
-    taruh(20);
+    // scanX(1, 100);
+    // scanX(2, 100);
+    // scanX(2, 100);
+    // // scanTimer(37, 95, 50);
+    // delay(15); scanKotak(1, 90, 5);
 
-    // to Point A
-    mundur(100, 100); delay(35);
-    belokKanan(100, 5); belokKanan(100, 20);
+    // taruh(20);
 
-    scanX(1, 100);
-    scanX(2, 100);
-    belokKanan(100, 20);
+    // // to Point A
+    // mundur(100, 100); delay(35);
+    // belokKanan(100, 5); belokKanan(100, 20);
 
-    scanX(2, 100);
-    scanX(1, 100);
-    scanX(1, 100);
+    // scanX(1, 100);
+    // scanX(2, 100);
+    // belokKanan(100, 20);
 
-    belokKanan(90, 10);
-    scanX(1, 100);
-    bawah_lepas();
-    scanTimer(55, 80, 50);
+    // scanX(2, 100);
+    // scanX(1, 100);
+    // scanX(1, 100);
 
-    // scanKotak(1, 90, 5);
+    // belokKanan(90, 10);
+    // scanX(1, 100);
+    // bawah_lepas();
+    // scanTimer(55, 80, 50);
 
-    ambil(20);
+    // // scanKotak(1, 90, 5);
+
+    // ambil(20);
 }
 void fromCtoYellow() {
     scanX(1, 100);
@@ -429,33 +498,33 @@ void Program_Jalan()
     }
 
     // to Point C
-    isWarna = checkWarna();
-    if(isWarna == merah) {
-        fromCtoRed();
-    } else if(isWarna == kuning) {
-        fromCtoYellow();
-    } else if(isWarna == hijau) {
-        fromCtoGreen();
-    } else {
-        fromCtoGreen();
-    }
+    // isWarna = checkWarna();
+    // if(isWarna == merah) {
+    //     fromCtoRed();
+    // } else if(isWarna == kuning) {
+    //     fromCtoYellow();
+    // } else if(isWarna == hijau) {
+    //     fromCtoGreen();
+    // } else {
+    //     fromCtoGreen();
+    // }
 
-    delay(50);
-    // to Point A
-    isWarna = checkWarna();
-    if(isWarna == merah) {
-        fromAtoRed();
-        fromRedAtoD();
-    } else if(isWarna == kuning) {
-        fromAtoYellow();
-        fromYellowAtoD();
-    } else if(isWarna == hijau) {
-        fromAtoGreen();
-        fromGreenAtoD();
-    } else {
-        fromAtoGreen();
-        fromGreenAtoD();
-    }
+    // delay(50);
+    // // to Point A
+    // isWarna = checkWarna();
+    // if(isWarna == merah) {
+    //     fromAtoRed();
+    //     fromRedAtoD();
+    // } else if(isWarna == kuning) {
+    //     fromAtoYellow();
+    //     fromYellowAtoD();
+    // } else if(isWarna == hijau) {
+    //     fromAtoGreen();
+    //     fromGreenAtoD();
+    // } else {
+    //     fromAtoGreen();
+    //     fromGreenAtoD();
+    // }
 
 }
 

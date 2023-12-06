@@ -98,7 +98,7 @@ int second = 0;
 // #include "lib/scan-func.c" // has already import from motor-func
 #include "lib/servo-func.c"
 #include "lib/warna-func.c"
-#include "program.c"
+#include "program-final.c"
 #include "lib/menu-func.c"
 
 
